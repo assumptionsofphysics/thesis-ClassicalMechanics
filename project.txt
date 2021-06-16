@@ -21,6 +21,5 @@ General tasks:
   - Blog posts on classical mechanics
 
 For next week:
-* [R] Keep reading - title and synopsis of blog posts + other
-* [R] Find out if libraries are going to open anytime soon
-* [R] Fill in more of main points/misconceptions
+* [R] Continue with the Lagriang part, action principle (video), 
+* [R] Start writing the derivation as a series of steps where prerequites and conclusions are clear
