@@ -7,20 +7,22 @@
 \section{Infinitesimal Reducibility}
 
 	We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions. (continue this explanation). 
-	
-	Before formalizing this idea we must introduce a bit of topology. This will allow us to formalize ideas like experimental verifiability and state space. First we take X to be the set of statements. We assign to X a topology T which is a set of subsets of X that satisfy a few mathematical properties. Thus T is the set of experimentally verifiable statements. (need diagram like on paper) Applying a continuous set of coordinates to this gives us a differentiable manifold. This manifold will be our state space as discussed later.
-
-	Mathematically, Infinitesimal Reducibility can be formalized as follows: Let c $\in$ C be one state of the overall system in the state space of the overall system. For each c $\in$ C we can write $\rho_c$ which is a unique distribution of the parts of the system in their state space S. So $\rho_c(s)$ represents a density of state i.e. how many parts of the system are found in a particular state. Note here I am using a discrete picture of this density as it is much easier to get the idea in the discrete case. (maybe go into cdf/probability density here?) So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it i.e. our coordinates. We can then write a new map $\rho_{c,\xi} : \mathbb{R}^n \rightarrow \mathbb{R}$ as $\rho_{c,\xi} \equiv \rho_c(\xi^{-1}(\xi^a)) = \rho_c(s)$ where $\xi^a$ is our set of coordinates. This density is a function only of s, our point in the state space S. That means it cannot depend on our choice of coordinates $\xi$. So it must transform as a scalar under change of coordinates. In the continuous case we can find $\mu$ the number of our particles in a region U of state space by integration:
+\subsection{Some Topology}
+	Before formalizing this physical assumption we must introduce a bit of topology. This will allow us to formalize ideas like experimental verifiability and state space. First we take X to be a set of statements. We assign to X a topology T which is a set of subsets of X that satisfy a few mathematical properties. These mathematical properties correspond with physical ideas like: A statement is experimentally verifiable if it can be tested in a finite amount of time. Thus T is the subset of X containing experimentally verifiable statements. (need tiered diagram like on paper) Applying a continuous set of coordinates to this topological space gives us a differentiable manifold. This manifold will be our state space as discussed later.
+\subsection{Constraint on Coordinate Transformations}
+	Mathematically, Infinitesimal Reducibility can be formalized as follows: Let c $\in$ C be one state of the overall system in the state space C of the overall system. For each c $\in$ C we can write $\rho_c$ which is a unique distribution of the parts of the system in their state space S. So $\rho_c(s)$ represents a density of state i.e. how many parts of the system are found in a particular state. Note here I am using a discrete picture of this density as it is much easier to get the idea in the discrete case.(picture with c in C and distribution of s's in S) (maybe go into cdf/probability density here?) So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}. We can then write a new map $\rho_{c,\xi} : \mathbb{R}^n \rightarrow \mathbb{R}$ as $\rho_{c,\xi} \equiv \rho_c(\xi^{-1}(\xi^a)) = \rho_c(s)$ where $\xi^a$ is our set of coordinates. This density is a function only of s, our point in the state space S. That means it cannot depend on our choice of coordinates $\xi$. So it must transform as a scalar under a change of these coordinates. This leads us to the following process:
+\begin{quote}
+In the continuous case we can find $\mu$ the number of our particles in a region U of state space by integration:
 	\begin{equation}
 	\label{rho_c}
 	\mu(U) = \int_{U} \rho_c(s)\, dS
 	\end{equation}
-Then we write $(\ref{rho_c})$ in terms of our state variables $\xi^a$. 
+Then we write $(\ref{rho_c})$ in terms of our state variables $\xi^a$ 
 	\begin{equation}
 	\label{rho_xia}
 	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a
 	\end{equation}
-Applying a change of coordinates $\hat{\xi}^b \equiv \hat{\xi}^b(\xi^a)$ we get:
+Applying a change of coordinates $\hat{\xi}^b \equiv \hat{\xi}^b(\xi^a)$ we get
 	\begin{equation}
 	\label{rho_xib}
 	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a = \int_{\hat{\xi}(U)} \rho_{c,\hat{\xi}}(\hat{\xi}^b) \, d\hat{\xi}^b
@@ -30,15 +32,17 @@ We can then write
 	\label{rho_J}
 	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a = \int_{\xi(U)} \rho_{c,\hat{\xi}}(\hat{\xi}^b) |\frac{d\hat{\xi}^b}{d\xi^a}| \, d\xi^a
 	\end{equation}
-and thus
+This then implies
 	\begin{equation}
 	\label{}
 	|\frac{d\hat{\xi}^b}{d\xi^a}| = 1
 	\end{equation}
+\end{quote}
+This constraint on the Jacobian of our transformation will now lead us to the conclusion that our state space must be at least a \textit{symplectic manifold}. Don't worry if you have no idea what this means we will go through it in detail in a moment.
 
 \section{Reversible and Deterministic Evolution}
 
-\section{Motional Equivalence}
+\section{Kinematic Equivalence}
 
 
 
