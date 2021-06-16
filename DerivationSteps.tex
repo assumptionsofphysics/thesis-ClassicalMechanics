@@ -1,8 +1,11 @@
 \documentclass{article}
 \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{commath}
 \begin{document}
 
 \title{Derivation Steps}
+\textsl{need to swap d with dels for partials}
 
 \section{Infinitesimal Reducibility}
 
@@ -37,15 +40,14 @@ Applying a change of coordinates $\hat{\xi}^b \equiv \hat{\xi}^b(\xi^a)$ we get
 We can then write
 	\begin{equation}
 	\label{rho_J}
-	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a = \int_{\xi(U)} \rho_{c,\hat{\xi}}(\hat{\xi}^b) |\frac{d\hat{\xi}^b}{d\xi^a}| \, d\xi^a
+	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a = \int_{\xi(U)} \rho_{c,\hat{\xi}}(\hat{\xi}^b) \abs{\frac{d\hat{\xi}^b}{d\xi^a}} \, d\xi^a
 	\end{equation}
 This then implies
 	\begin{equation}
 	\label{}
-	|\frac{d\hat{\xi}^b}{d\xi^a}| = 1
+	\abs{\frac{d\hat{\xi}^b}{d\xi^a}} = 1
 	\end{equation}
 \end{quote}
-
 This constraint on the Jacobian of our transformation will now lead us to the conclusion that our state space must be at least a \textit{symplectic manifold}. Don't worry if you have no idea what this means we will go through it in detail in a moment.
 
 \subsection{Unit Variables, Conjugate Pairs, and 2n Dimensional State Space}
@@ -53,15 +55,24 @@ This constraint on the Jacobian of our transformation will now lead us to the co
 
 	First we will start by defining a \textit{unit variable}. A unit variable $q \in \xi^a$ is a state variable that is the definition of a unit. We then will have a subset $q^i \in \xi^a$ that defines our \textit{unit system} for our state variables or coordinates. If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
 	
-	Now let's look at a simple case: $\xi^a = \{q,k_\alpha\}$ where $q$ is our only unit variable and $k_\alpha$ is any number of other state variables. We know that the units of the density of states $\rho_c$ are invariant under a change of units (the number of classical particles per state does not change). So let's consider $\hat{q} = \hat{q}(q)$. We know we will get a change of state variables $\hat{\xi}^b = \{\hat{q},\hat{k}_\beta\}$ and that the Jacobian of this transformation $|\frac{d\hat{\xi}^b}{d\xi^a}|$ must be one. We now have three propositions to investigate: there are no $k_\alpha$ variables, there is exactly one $k_\alpha$ variable, or there are more than one $k_\alpha$ variables.
+	Now let's look at a simple case: $\xi^a = \{q,k_\alpha\}$ where $q$ is our only unit variable and $k_\alpha$ is any number of other state variables. We know that the units of the density of states $\rho_c$ are invariant under a change of units (the number of classical particles per state does not change). So let's consider $\hat{q} = \hat{q}(q)$. We know we will get a change of state variables $\hat{\xi}^b = \{\hat{q},\hat{k}_\beta\}$ and that the Jacobian of this transformation $\abs{\frac{d\hat{\xi}^b}{d\xi^a}}$ must be one. We now have three possible results: there are no $k_\alpha$ variables, there is exactly one $k_\alpha$ variable, or there are more than one $k_\alpha$ variables.
 	
-	
-	
+	First let's assume there are no $k_\alpha$ variables. Then $\abs{\frac{d\hat{\xi}^b}{d\xi^a}}$ = $\abs{\frac{d\hat{q}}{dq}} = 1$. This however restricts our unit change $\hat{q}^j = \hat{q}^j(q^i)$ which was assumed to be completely arbitrary. Thus there is at least one $k_\alpha$ variable.Using our knowledge of the value of the Jacobian we can change our $k_\alpha$ variables to compensate for our change in $q$.
+	\begin{equation}
+	\label{}
+	\abs{J} = \abs{\frac{d\hat{\xi}^b}{d\xi^a}} = \abs{ \arraycolsep=1.7pt\def\arraystretch{2.2}
+	\begin{array}{@{}c|c@{}} \abs{\frac{d\hat{q}}{dq}} & \abs{\frac{d\hat{q}}{dk_\alpha}} \\
+\hline \abs{\frac{d\hat{k}_\beta}{dq}} & \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
+\end{array}	} = \abs{ \arraycolsep=1.7pt\def\arraystretch{2.2}
+	\begin{array}{@{}c|c@{}} \abs{\frac{d\hat{q}}{dq}} & 0 \\
+\hline \abs{\frac{d\hat{k}_\beta}{dq}} & \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
+\end{array}	}
+	\end{equation}
+We know $\abs{\frac{d\hat{q}}{dk_\alpha}}$ is zero because $\hat{q}$ is a function only of $q$. The determinant of this lower triangular block matrix is the product of the diagonal: $|\frac{d\hat{\xi}^b}{d\xi^a}| = \abs{\frac{d\hat{q}}{dq}}\abs{\frac{d\hat{k}_\beta}{dk_\alpha}}$. 
 	
 \section{Reversible and Deterministic Evolution}
 
 \section{Kinematic Equivalence}
-
 
 
 
