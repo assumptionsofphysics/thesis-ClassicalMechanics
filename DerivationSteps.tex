@@ -68,7 +68,14 @@ This constraint on the Jacobian of our transformation will now lead us to the co
 \hline \abs{\frac{d\hat{k}_\beta}{dq}} & \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
 \end{array}	}
 	\end{equation}
-We know $\abs{\frac{d\hat{q}}{dk_\alpha}}$ is zero because $\hat{q}$ is a function only of $q$. The determinant of this lower triangular block matrix is the product of the diagonal: $|\frac{d\hat{\xi}^b}{d\xi^a}| = \abs{\frac{d\hat{q}}{dq}}\abs{\frac{d\hat{k}_\beta}{dk_\alpha}}$. 
+We know $\abs{\frac{d\hat{q}}{dk_\alpha}}$ is zero because $\hat{q}$ is a function only of $q$. The determinant of this lower triangular block matrix is the product of the diagonal: $1 = |\frac{d\hat{\xi}^b}{d\xi^a}| = \abs{\frac{d\hat{q}}{dq}}\abs{\frac{d\hat{k}_\beta}{dk_\alpha}}$. $\abs{\frac{d\hat{q}}{dq}}$ is a total derivative as $\hat{q}$ is a function only of $q$ and thus we obtain its inverse by interchanging numerator and denominator. We then have:
+	\begin{equation}
+	\label{}
+	 \abs{\frac{dq}{d\hat{q}}} = \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
+	\end{equation}
+This provides only a single constraint on the $k_\alpha$ variable(s). So if we had two or more $k_\alpha$'s we would be unable to \underline{uniquely} recover this transformation. As such we conclude that there exists exactly one $k_\alpha$. 
+
+Extending this to the case with an arbitrary number of unit variables recall that unit variables are independent of each other. Thus changing $q^1$ will not affect $q^2$. W can now see that for each change of a unit variable we will have a corresponding (covariant) change in a \textit{conjugate variable} ($k_\alpha$).
 	
 \section{Reversible and Deterministic Evolution}
 
