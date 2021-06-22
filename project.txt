@@ -22,4 +22,6 @@ General tasks:
 
 For next week:
 * [R] Continue with the Lagriang part, action principle (video), 
-* [R] Start writing the derivation as a series of steps where prerequites and conclusions are clear
+* [R] Use assumptions/definitions/proposition to spell out the stopping points of the arguments to create an outline
+* [R] Think about how to include the Main Points from the other document
+* [R] Think about what types of diagrams/pictures would be helpful

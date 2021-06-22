@@ -1,7 +1,5 @@
 \documentclass{article}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{commath}
+\usepackage{assumptionsofphysics}
 \begin{document}
 
 \title{Derivation Steps}
@@ -19,7 +17,24 @@
 \subsection{Constraint on Coordinate Transformations}
 \textsl{Temp // Prerequisites: State Space is a Differentiable Manifold // Conclusions: Jacobian of coordinate change is 1}
 
-	Mathematically, Infinitesimal Reducibility can be formalized as follows: Let c $\in$ C be one state of the overall system in the state space C of the overall system. For each c $\in$ C we can write $\rho_c: S \rightarrow \mathbb{R}$ which is a unique distribution of the parts of the system in their state space S. So $\rho_c(s)$ represents a density of state i.e. how many parts of the system are found in a particular state. Note here I am using a discrete picture of this density as it is much easier to get the idea in this case.(picture with c in C and distribution of s's in S) (maybe go into cdf/probability density here?) So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}. We can then write a new map $\rho_{c,\xi} : \mathbb{R}^n \rightarrow \mathbb{R}$ as $\rho_{c,\xi} \equiv \rho_c(\xi^{-1}(\xi^a)) = \rho_c(s)$ where $\xi^a$ is our set of coordinates. This density is a function only of s, our point in the state space S. That means it cannot depend on our choice of coordinates $\xi$. So it must transform as a scalar under a change of these coordinates. This leads us to the following process:
+\begin{assump}[Infinitesimal reducibility]
+	The state of the system is reducible to the state of its infinitesimal
+	parts. That is, giving the state of the whole system is equivalent to giving the state of its parts, which in turn is equivalent to giving the state of its subparts and so on.
+\end{assump}
+
+Mathematically, Infinitesimal Reducibility can be formalized as follows: Let c $\in$ C be one state of the overall system in the state space C of the overall system. For each c $\in$ C we can write $\rho_c: S \rightarrow \mathbb{R}$ which is a unique distribution of the parts of the system in their state space S. So $\rho_c(s)$ represents a density of state i.e. how many parts of the system are found in a particular state. Note here I am using a discrete picture of this density as it is much easier to get the idea in this case.(picture with c in C and distribution of s's in S) (maybe go into cdf/probability density here?)
+
+\begin{defn}
+	The state space of the whole system is $\mathcal{C}$. A particle is an infinitesimal subdivision. The state space of the particles is $\mathcal{S}$. For each state of the whole is a distribution over the parts.
+\end{defn}
+
+ So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}.
+
+\begin{defn}
+	A state variables is a map ... A set of state variables is ...
+\end{defn}
+
+ We can then write a new map $\rho_{c,\xi} : \mathbb{R}^n \rightarrow \mathbb{R}$ as $\rho_{c,\xi} \equiv \rho_c(\xi^{-1}(\xi^a)) = \rho_c(s)$ where $\xi^a$ is our set of coordinates. This density is a function only of s, our point in the state space S. That means it cannot depend on our choice of coordinates $\xi$. So it must transform as a scalar under a change of these coordinates. This leads us to the following process:
 	
 \begin{quote}
 In the continuous case we can find $\mu$ the number of our particles in a region U of state space by integration:
@@ -40,42 +55,51 @@ Applying a change of coordinates $\hat{\xi}^b \equiv \hat{\xi}^b(\xi^a)$ we get
 We can then write
 	\begin{equation}
 	\label{rho_J}
-	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a = \int_{\xi(U)} \rho_{c,\hat{\xi}}(\hat{\xi}^b) \abs{\frac{d\hat{\xi}^b}{d\xi^a}} \, d\xi^a
+	\int_{\xi(U)} \rho_{c,\xi}(\xi^a) \, d\xi^a = \int_{\xi(U)} \rho_{c,\hat{\xi}}(\hat{\xi}^b) \left|\frac{d\hat{\xi}^b}{d\xi^a}\right| \, d\xi^a
 	\end{equation}
 This then implies
 	\begin{equation}
 	\label{}
-	\abs{\frac{d\hat{\xi}^b}{d\xi^a}} = 1
+	\left|\frac{d\hat{\xi}^b}{d\xi^a}\right| = 1
 	\end{equation}
 \end{quote}
 This constraint on the Jacobian of our transformation will now lead us to the conclusion that our state space must be at least a \textit{symplectic manifold}. Don't worry if you have no idea what this means we will go through it in detail in a moment.
+
+\begin{prop}
+	A change of state variables must be differentiable and must have a unitary Jacobian.
+\end{prop}
+
 
 \subsection{Unit Variables, Conjugate Pairs, and 2n Dimensional State Space}
 \textsl{Temp // Prerequisites: Jacobian is 1, State Space is Diff Manifold // Conclusions: State space is 2n dimensional with $\{q^i,k_i\}$ pairs of state variables}
 
 	First we will start by defining a \textit{unit variable}. A unit variable $q \in \xi^a$ is a state variable that is the definition of a unit. We then will have a subset $q^i \in \xi^a$ that defines our \textit{unit system} for our state variables or coordinates. If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
 	
-	Now let's look at a simple case: $\xi^a = \{q,k_\alpha\}$ where $q$ is our only unit variable and $k_\alpha$ is any number of other state variables. We know that the units of the density of states $\rho_c$ are invariant under a change of units (the number of classical particles per state does not change). So let's consider $\hat{q} = \hat{q}(q)$. We know we will get a change of state variables $\hat{\xi}^b = \{\hat{q},\hat{k}_\beta\}$ and that the Jacobian of this transformation $\abs{\frac{d\hat{\xi}^b}{d\xi^a}}$ must be one. We now have three possible results: there are no $k_\alpha$ variables, there is exactly one $k_\alpha$ variable, or there are more than one $k_\alpha$ variables.
+	Now let's look at a simple case: $\xi^a = \{q,k_\alpha\}$ where $q$ is our only unit variable and $k_\alpha$ is any number of other state variables. We know that the units of the density of states $\rho_c$ are invariant under a change of units (the number of classical particles per state does not change). So let's consider $\hat{q} = \hat{q}(q)$. We know we will get a change of state variables $\hat{\xi}^b = \{\hat{q},\hat{k}_\beta\}$ and that the Jacobian of this transformation $\left|\frac{d\hat{\xi}^b}{d\xi^a}\right|$ must be one. We now have three possible results: there are no $k_\alpha$ variables, there is exactly one $k_\alpha$ variable, or there are more than one $k_\alpha$ variables.
 	
-	First let's assume there are no $k_\alpha$ variables. Then $\abs{\frac{d\hat{\xi}^b}{d\xi^a}}$ = $\abs{\frac{d\hat{q}}{dq}} = 1$. This however restricts our unit change $\hat{q}^j = \hat{q}^j(q^i)$ which was assumed to be completely arbitrary. Thus there is at least one $k_\alpha$ variable.Using our knowledge of the value of the Jacobian we can change our $k_\alpha$ variables to compensate for our change in $q$.
+	First let's assume there are no $k_\alpha$ variables. Then $\left|\frac{d\hat{\xi}^b}{d\xi^a}\right|$ = $\left|\frac{d\hat{q}}{dq}\right| = 1$. This however restricts our unit change $\hat{q}^j = \hat{q}^j(q^i)$ which was assumed to be completely arbitrary. Thus there is at least one $k_\alpha$ variable.Using our knowledge of the value of the Jacobian we can change our $k_\alpha$ variables to compensate for our change in $q$.
 	\begin{equation}
 	\label{}
-	\abs{J} = \abs{\frac{d\hat{\xi}^b}{d\xi^a}} = \abs{ \arraycolsep=1.7pt\def\arraystretch{2.2}
-	\begin{array}{@{}c|c@{}} \abs{\frac{d\hat{q}}{dq}} & \abs{\frac{d\hat{q}}{dk_\alpha}} \\
-\hline \abs{\frac{d\hat{k}_\beta}{dq}} & \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
-\end{array}	} = \abs{ \arraycolsep=1.7pt\def\arraystretch{2.2}
-	\begin{array}{@{}c|c@{}} \abs{\frac{d\hat{q}}{dq}} & 0 \\
-\hline \abs{\frac{d\hat{k}_\beta}{dq}} & \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
-\end{array}	}
+	\left|J\right| = \left|\frac{d\hat{\xi}^b}{d\xi^a}\right| = \left| \arraycolsep=1.7pt\def\arraystretch{2.2}
+	\begin{array}{@{}c|c@{}} \left|\frac{d\hat{q}}{dq}\right| & \left|\frac{d\hat{q}}{dk_\alpha}\right| \\
+\hline \left|\frac{d\hat{k}_\beta}{dq}\right| & \left|\frac{d\hat{k}_\beta}{dk_\alpha}\right|
+\end{array}	\right| = \left| \arraycolsep=1.7pt\def\arraystretch{2.2}
+	\begin{array}{@{}c|c@{}} \left|\frac{d\hat{q}}{dq}\right| & 0 \\
+\hline \left|\frac{d\hat{k}_\beta}{dq}\right| & \left|\frac{d\hat{k}_\beta}{dk_\alpha}\right|
+\end{array}	\right|
 	\end{equation}
-We know $\abs{\frac{d\hat{q}}{dk_\alpha}}$ is zero because $\hat{q}$ is a function only of $q$. The determinant of this lower triangular block matrix is the product of the diagonal: $1 = |\frac{d\hat{\xi}^b}{d\xi^a}| = \abs{\frac{d\hat{q}}{dq}}\abs{\frac{d\hat{k}_\beta}{dk_\alpha}}$. $\abs{\frac{d\hat{q}}{dq}}$ is a total derivative as $\hat{q}$ is a function only of $q$ and thus we obtain its inverse by interchanging numerator and denominator. We then have:
+We know $\left|\frac{d\hat{q}}{dk_\alpha}\right|$ is zero because $\hat{q}$ is a function only of $q$. The determinant of this lower triangular block matrix is the product of the diagonal: $1 = |\frac{d\hat{\xi}^b}{d\xi^a}| = \left|\frac{d\hat{q}}{dq}\right|\left|\frac{d\hat{k}_\beta}{dk_\alpha}\right|$. $\left|\frac{d\hat{q}}{dq}\right|$ is a total derivative as $\hat{q}$ is a function only of $q$ and thus we obtain its inverse by interchanging numerator and denominator. We then have:
 	\begin{equation}
 	\label{}
-	 \abs{\frac{dq}{d\hat{q}}} = \abs{\frac{d\hat{k}_\beta}{dk_\alpha}}
+	 \left|\frac{dq}{d\hat{q}}\right| = \left|\frac{d\hat{k}_\beta}{dk_\alpha}\right|
 	\end{equation}
 This provides only a single constraint on the $k_\alpha$ variable(s). So if we had two or more $k_\alpha$'s we would be unable to \textbf{uniquely} recover this transformation. As such we conclude that there exists exactly one $k_\alpha$. 
 
 	Extending this to the case with an arbitrary number of unit variables recall that unit variables are independent of each other. Thus changing $q^1$ will not affect $q^2$. W can now see that for each change of a unit variable we will have a corresponding (covariant) change in a \textit{conjugate variable} ($k_\alpha$). This gives us our 2n dimensional phase space made up of conjugate pairs of state variables. 
+
+\begin{prop}
+	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ with well defined transformation rule.
+\end{prop}
 
 \subsection{Symplectic Form and Structure, Overall Picture so far}
 \textsl{Temp // Prerequisites: Understanding of conjugate pairs and 2n dimensional phase space // Conclusions: this phase space is a symplectic manifold with a symplectic form $\omega$}
@@ -85,6 +109,14 @@ This provides only a single constraint on the $k_\alpha$ variable(s). So if we h
 	We know we want $\rho_c$ to be an invariant density of states. This idea of density requires a definition of area or volume. In order to define area we use a \textit{two-form} $\omega$ to give the infinitesimal area of an infinitesimal surface. We can use this to define the integral $\int_{\Sigma} \rho_c\omega(d\Sigma)$ over $\Sigma \subset S$.	This integral gives the fraction of the system found in the region $\Sigma$ of the state space $S$. This two-form is closed and not degenerate (I won't go into this proof here) and thus $S$ as a manifold possessing such a two-form is a symplectic manifold.
 	
 	Now so far we have gone through a lot of math and the physics seems to have gotten lost along the way. Here I will give a less abstract picture of the consequences of these results. We have shown that if a system we are studying is infinitesimally reducible the phase space of its parts is a symplectic manifold. The state $c$ of the system is represented by a coordinate-invariant density over this manifold. We will now consider the time evolution of this system and will see that this idea of a density of states in phase space can be used to understand how the system changes over time.
+	
+\begin{prop}
+	For each independent degree of freedom, the area given $\int_U \hbar dq^i dk_i = \int_U dq^i dp_i$ quantifies the number of possible configurations within the region $U$.
+\end{prop}
+
+\begin{prop}
+	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$.
+\end{prop}
 	
 \section{Reversible and Deterministic Evolution}
 
