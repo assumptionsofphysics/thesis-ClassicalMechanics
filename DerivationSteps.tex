@@ -5,20 +5,20 @@
 \title{Derivation Steps}
 
 \section{Infinitesimal Reducibility}
-
-	We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions. (continue this explanation). 
 	
-\subsection{Constraint on Coordinate Transformations}
-
 \begin{assump}[Infinitesimal reducibility]
 	The state of the system is reducible to the state of its infinitesimal parts. That is, giving the state of the whole system is equivalent to giving the state of its parts, which in turn is equivalent to giving the state of its subparts and so on.
 \end{assump}
+
+	%We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions. (continue this explanation). 
+	
+\subsection{Constraint on Coordinate Transformations}
 
 \begin{defn}
 	The state space of the whole system is $\mathcal{C}$. A particle is an infinitesimal subdivision. The state space of the particles is $\mathcal{S}$. Each state of the whole is a distribution over the states of the parts.
 \end{defn}
 
- %So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}.%
+	%So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}.%
 
 \begin{defn}
 	A state variable assigns one numerical value to a degree of freedom of our state space. A set of state variables is a map $\xi : S \rightarrow \mathbb{R}^n $ where n is the number of degrees of freedom. This map uniquely describes a state. The set of variables designating a state is written $\xi^\alpha$.
@@ -29,7 +29,7 @@
 \end{defn}
 
 \begin{prop}
-	A change of state variables must be differentiable and must have a unitary Jacobian i.e. $\left|\frac{d\hat{\xi}^b}{d\xi^a}\right| = 1$.
+	A change of state variables must be differentiable and must have a unitary Jacobian i.e. $\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = 1$.
 \end{prop}
 
 
@@ -39,21 +39,24 @@
 	We define a unit variable $q \in \xi^a$ as a state variable that is the definition of a unit. The set of unit variables $q^i \in \xi^\alpha$ defines a unit system upon which the other state variables depend. (give example of dependent/independent unit variables)
 \end{defn}
 
-
-%If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
+	%If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
 
 \begin{prop}
 	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ with a well defined transformation rule.
 \end{prop}
 
 \subsection{Areas in State Space and Poisson Brackets}
+
+\begin{defn}
+	The Poisson bracket is defined as $\{f,g\} = \frac{\partial f}{\partial x}\frac{\partial g}{\partial p} - \frac{\partial g}{\partial x}\frac{\partial f}{\partial p}$. This is the classical equivalent of the quantum commutator.
+\end{defn}
 	
 \begin{prop}
 	For each independent degree of freedom, the area given $\int_U \hbar dq^i dk_i = \int_U dq^i dp_i$ quantifies the number of possible configurations within the region $U$.
 \end{prop}
 
 \begin{prop}
-	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$.
+	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$. It is the Jacobian of the transformation $dfdg \rightarrow dxdp$ i.e. $dfdg = \{f,g\}dxdp$.
 \end{prop}
 	
 \section{Reversible and Deterministic Evolution}
@@ -66,18 +69,54 @@
 	We write $\lambda: \mathbb{R} \rightarrow \mathcal{S}$ defined as $s = \lambda(t)$ as the evolution of the state of one particle. Now the density associated with the state at $t_0$ is given by $\rho_c(\lambda(t_0),t_0)$.
 \end{defn}
 
+	%By our condition of Deterministic and Reversible evolution we must have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$ meaning this density of states is conserved over time. So all particles that begin in the same state will evolve through and end in the same states. Now going back to our integral $\int_{\Sigma} \rho_c\omega(d\Sigma)$ we will find that our region $\Sigma$ is mapped to a new region in state space as the system evolves, but the same fraction of the parts of the system will be found in that region.
+
 \begin{prop}
-	The density $\rho_c(\lambda(t),t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen.
+	The density $\rho_c(\lambda(t),t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen. (diagram showing conserved volumes/areas)
 \end{prop}
 
-	%Reversible and Deterministic Evolution means that the state of the system and its parts is uniquely determined by the state at any other time. We know exactly the past and future of the system (via some calculations of course) given its present state. Formally this can be written as $\lambda: \mathbb{R} \rightarrow S$ defined as $s = \lambda(t)$. Now the density associated with the state at $t_0$ is given by $\rho(\lambda(t_0),t_0)$. By our condition of Deterministic and Reversible evolution we must also have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$ meaning this density of states is conserved over time. So all particles that begin in the same state will evolve through and end in the same states. Now going back to our integral $\int_{\Sigma} \rho_c\omega(d\Sigma)$ we will find that our region $\Sigma$ is mapped to a new region in state space as the system evolves, but the same fraction of the parts of the system will be found in that region. 
+\begin{prop}
+	The above conditions are sufficient to say that our system is Hamiltonian and thus satisfies Hamilton's equations.
+\end{prop} 
 	
 	%The incredible thing here is that from two assumptions we can derive the entirety of Hamiltonian mechanics. 
 
-
-
-
 \section{Kinematic Equivalence}
+
+\begin{assump}[Kinematic Equivalence]
+	There is a invertible bijection between trajectories in phase space and trajectories in physical space-time. (diagram showing bijection)
+\end{assump}
+
+\subsection{Weak Equivalence}
+
+\begin{defn}
+	We take $x^i = q^i$. We then define $v_i = d_tx^i$.
+\end{defn}
+
+\begin{prop}
+	$x^i = q^i$ and $v^i = d_tx^i = v^i(q^j,p_k)$ hold at all times $t$. (photon counter-example $v^i$ function only of $x^i$) This is called weak equivalence meaning $v^i$ is invertible at every $q^i$. 
+\end{prop}
+
+\begin{prop}
+	Weak equivalence is sufficient to construct a Lagrangian and thus this system is Lagrangian.
+\end{prop}
+
+\subsection{Full Equivalence}
+
+\begin{prop}
+	Full equivalence means that Kinematic Equivalence extends to the composite system. So we have $\rho(q^i,p_j) = \left|J\right|\rho(x^i,v^j) = \left|\frac{\partial v^i}{\partial p_j}\right|\rho(x^i,v^j)$. 
+\end{prop}
+
+\subsection{Action Principle}
+
+I think it would be nice to show how the Action Principle is simply a consequence of our assumptions just so readers have a reference to something they are already familiar with.
+
+\section{Overall Picture of Classical Mechanics}
+	
+\begin{prop}
+	Lagrangian Mechanics is a proper subset of Hamiltonian Mechanics. There is some overlap between Hamiltonian and Newtonian Mechanics. (Venn diagram)
+\end{prop}
+	
 
 
 
