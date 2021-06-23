@@ -4,13 +4,17 @@
 
 \title{Derivation Steps}
 
+\section{Introduction}
+
+	The purpose of this work is to re-derive Hamiltonian and Lagrangian mechanics. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian and Lagrangian mechanics lack this physicality. They are taught as mathematical reformulations of Newtonian Mechanics which they are not. This work will begin with basic physical assumptions about a system in order to show it obeys Hamiltonian and Lagrangian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precises mathematical definitions. This will lead us to our results.
+
 \section{Infinitesimal Reducibility}
 	
 \begin{assump}[Infinitesimal reducibility]
 	The state of the system is reducible to the state of its infinitesimal parts. That is, giving the state of the whole system is equivalent to giving the state of its parts, which in turn is equivalent to giving the state of its subparts and so on.
 \end{assump}
 
-	%We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions. (continue this explanation). 
+	We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions. (continue this explanation). 
 	
 \subsection{Constraint on Coordinate Transformations}
 
@@ -39,7 +43,7 @@
 	We define a unit variable $q \in \xi^a$ as a state variable that is the definition of a unit. The set of unit variables $q^i \in \xi^\alpha$ defines a unit system upon which the other state variables depend. (give example of dependent/independent unit variables)
 \end{defn}
 
-	%If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
+	If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
 
 \begin{prop}
 	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ with a well defined transformation rule.
@@ -111,13 +115,19 @@
 
 I think it would be nice to show how the Action Principle is simply a consequence of our assumptions just so readers have a reference to something they are already familiar with.
 
-\section{Overall Picture of Classical Mechanics}
+\section{Overall Picture of Classical Mechanics, Connections with other Areas}
 	
+\subsection{Overlap with and Distinction from Newtonian Mechanics}
+
 \begin{prop}
 	Lagrangian Mechanics is a proper subset of Hamiltonian Mechanics. There is some overlap between Hamiltonian and Newtonian Mechanics. (Venn diagram)
 \end{prop}
 	
+\subsection{Classical vs Quantum}
 
+	Classical Mechanics is not so different to Quantum Mechanics as many are led to believe. Many quantum phenomena have classical counterparts. (examples spin, antiparticles etc)
+
+\subsection{Statistical Mechanics and Density of States}
 
 
 
