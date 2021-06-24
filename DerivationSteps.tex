@@ -22,19 +22,25 @@
 	The state space of the whole system is $\mathcal{C}$. A particle is an infinitesimal subdivision. The state space of the particles is $\mathcal{S}$. Each state of the whole is a distribution over the states of the parts.
 \end{defn}
 
-	So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}.%
+	It is critical here to understand that the parts of the system that we consider are not point particles. They are simply small divisions of the composite system that we could continue to divide if we so chose.
 
 \begin{defn}
 	A state variable assigns one numerical value to a degree of freedom of our state space. A set of state variables is a map $\xi : S \rightarrow \mathbb{R}^n $ where n is the number of degrees of freedom. This map uniquely describes a state. The set of variables designating a state is written $\xi^\alpha$.
 \end{defn}
 
+So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}.
+
 \begin{defn}
 	For each state of the composite system $c \in \mathcal{C}$ there is a unique distribution of the parts of the system over their state space. This distribution is written as $\rho_c: \mathcal{S} \rightarrow \mathbb{R}$ and describes the density of particles in the state at a point $s \in \mathcal{S}$.
 \end{defn}
 
+	The composite system is in one state. This state is a \textit{unique} distribution of the parts of the system over their possible states. The point $s \in \mathcal{S}$ is mapped to a numerical value describing the number of particles in that state(I  use a discrete example here as it is simpler to understand). The actual state of a particle is independent of our choice of state variable describing it. For example we could describe the position of a ball on a line using femptometers or light-years, but the actual position of the ball would not change. So our density must transform as a scalar under a change of state variables.
+
 \begin{prop}
 	A change of state variables must be differentiable and must have a unitary Jacobian i.e. $\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = 1$.
 \end{prop}
+
+	\textit{Justification.} We know $\rho_c$ must transform as a scalar under a change of state variables. Now we consider the integral $\int_U$
 
 
 \subsection{Unit Variables, Conjugate Pairs, and 2n Dimensional State Space}
@@ -102,7 +108,7 @@
 \end{prop}
 
 \begin{prop}
-	Weak equivalence is sufficient to construct a Lagrangian and thus this system is Lagrangian.
+	Weak equivalence is sufficient to construct a Lagrangian and thus systems obeying these three conditions are Lagrangian.
 \end{prop}
 
 \subsection{Full Equivalence}
@@ -116,6 +122,9 @@
 I think it would be nice to show how the Action Principle is simply a consequence of our assumptions just so readers have a reference to something they are already familiar with.
 
 \section{Overall Picture of Classical Mechanics, Connections with other Areas} 
+
+
+\section{Conclusion}
 	
 
 
