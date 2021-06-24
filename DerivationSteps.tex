@@ -22,19 +22,19 @@
 	The state space of the whole system is $\mathcal{C}$. A particle is an infinitesimal subdivision. The state space of the particles is $\mathcal{S}$. Each state of the whole is a distribution over the states of the parts.
 \end{defn}
 
-	It is critical here to understand that the parts of the system that we consider are not point particles. They are simply small divisions of the composite system that we could continue to divide if we so chose.
+	%It is critical here to understand that the parts of the system that we consider are not point particles. They are simply small divisions of the composite system that we could continue to divide if we so chose.
 
 \begin{defn}
 	A state variable assigns one numerical value to a degree of freedom of our state space. A set of state variables is a map $\xi : S \rightarrow \mathbb{R}^n $ where n is the number of degrees of freedom. This map uniquely describes a state. The set of variables designating a state is written $\xi^\alpha$.
 \end{defn}
 
-So now we want to identify our state in S with numbers. This means we need a map $\xi : S \rightarrow \mathbb{R}^n $ that takes a state and assigns it a set of numerical values sufficient to uniquely identify it; our coordinates or \textit{state variables}.
+	\textit{Justification.} So now we want to identify our state in S with numbers so that all states are uniquely labeled. This means for each degree of freedom of our state space we need a numerical value, so we write a map from our state space to n-dimensional Euclidean space. 
 
 \begin{defn}
-	For each state of the composite system $c \in \mathcal{C}$ there is a unique distribution of the parts of the system over their state space. This distribution is written as $\rho_c: \mathcal{S} \rightarrow \mathbb{R}$ and describes the density of particles in the state at a point $s \in \mathcal{S}$.
+	For each state of the composite system $c \in \mathcal{C}$ there is a unique distribution of the parts of the system over their state space. This distribution is written as $\rho_c: \mathcal{S} \rightarrow \mathbb{R}$ and describes the density of particles in the state at a point $s \in \mathcal{S}$ and will transform as a scalar under a change of state variables.
 \end{defn}
 
-	The composite system is in one state. This state is a \textit{unique} distribution of the parts of the system over their possible states. The point $s \in \mathcal{S}$ is mapped to a numerical value describing the number of particles in that state(I  use a discrete example here as it is simpler to understand). The actual state of a particle is independent of our choice of state variable describing it. For example we could describe the position of a ball on a line using femptometers or light-years, but the actual position of the ball would not change. So our density must transform as a scalar under a change of state variables.
+	\textit{Justification.} The composite system is in one state. This state is a \textit{unique} distribution of the parts of the system over their possible states. The point $s \in \mathcal{S}$ is mapped to a numerical value describing the number of particles in that state(I  use a discrete example here as it is simpler to understand). The actual state of a particle is independent of our choice of state variable describing it. For example we could describe the position of a ball on a line using femptometers or light-years, but the actual position of the ball would not change. So our density must transform as a scalar under a change of state variables because the number of classical particles in a particular region of state space doesn't change if the axes of that state space are relabeled.
 
 \begin{prop}
 	A change of state variables must be differentiable and must have a unitary Jacobian i.e. $\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = 1$.
@@ -49,7 +49,7 @@ So now we want to identify our state in S with numbers. This means we need a map
 	We define a unit variable $q \in \xi^a$ as a state variable that is the definition of a unit. The set of unit variables $q^i \in \xi^\alpha$ defines a unit system upon which the other state variables depend. (give example of dependent/independent unit variables)
 \end{defn}
 
-	If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
+	\textit{Justification.} If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
 
 \begin{prop}
 	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ with a well defined transformation rule.
