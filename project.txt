@@ -21,7 +21,5 @@ General tasks:
   - Blog posts on classical mechanics
 
 For next week:
-* [R] Continue with the Lagriang part, action principle (video), 
-* [R] Use assumptions/definitions/proposition to spell out the stopping points of the arguments to create an outline
-* [R] Think about how to include the Main Points from the other document
-* [R] Think about what types of diagrams/pictures would be helpful
+* [R] Do a final pass on the layout to understand what is the structure
+* [R] Take the first section, and start planning the examples/paragraphs/narrative

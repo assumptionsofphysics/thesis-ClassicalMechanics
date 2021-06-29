@@ -159,13 +159,27 @@ The unit that I use to express the density on position and velocity must depende
 
 I think it would be nice to show how the Action Principle is simply a consequence of our assumptions just so readers have a reference to something they are already familiar with.
 
-\section{Overall Picture of Classical Mechanics, Connections with other Areas} 
+\section{Advanced topics}
 
-\subsection{The Three Formulations of Classical Mechanics}
+\subsection{Kinematic vs dynamics}
 
-\subsection{Connections with Quantum}
+Differences between Newtonian/Lagrangian/Hamiltonian mechanics.
 
-\subsection{Connections with Statistical Mechanics}
+Show that they are inequivalent. Newtonian mechanics needs n functions to define the evolution while Lagrangian/Hamiltonian requires 1. All Lagrangians that have unique solution have a Hamiltonian. All Hamiltonians have unique solutions, but not necessarily a Lagrangian. (must follow discussion on the action principle) Mix with examples.
+
+Kinematics and dynamics. Newtonian and Hamiltonian mechanics necessarily define both. Technically, Lagrangian mechanics is purely kinematic (equations are only in terms of position and velocity - you can't distinguish apparent forces from real forces). The only way to recover the dynamics is to assume the system is also Hamiltonian.
+
+Kinematic aliasing (systems with different dynamics may have the same kinematics). Example of 3 different dynamics (friction, boosted, losing mass). This is confusing because, in some cases, you can treat non-conservative systems in Lagrangian mechanics as they look like conservative systems in a non-inertial frame (naturally, the Hamiltonian and the conjugate momentum will not correspond to what you expect).
+
+How is kinematic aliasing resolved. Newtonian mechanics resolves kinematic aliasing by invoking inertial frames and by writing equations that are valid \emph{only} in inertial frames (you can distinguish apparent forces from real forces in an inertial frame).  In Lagrangian/Hamiltonian mechanics, the equations are invariant under coordinate transformation: we can't do that anymore. You fix the system to be conservative. If you had a system of equations that were invariant under all coordinate transformation for all frames, you would not be able to tell which forces are apparent and which forces are real.
+
+\subsection{Entropy in classical mechanics}
+
+Entropy is invariant under coordinate transformation - the same for all observers (invariance under time is less important).
+
+Classical uncertainty principle: fixing the entropy of the distribution gives us an inequality that is saturated by Gaussian distributions. (discuss parallel with quantum mechanics - classical mechanics allow for minus infinite entropy)
+
+Time evolution of entropy. It is conserved only under Hamiltonian evolution. If the evolution is not Hamiltonian, the entropy does the opposite of what one expected. (dissipative systems, like damped harmonic oscillator, concentrate the distributions around the attractor, and therefore) The problem is that the same statement at different time provides different amount of information/granularity of the description.
 
 
 \section{Conclusion}
