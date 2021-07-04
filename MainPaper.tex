@@ -6,7 +6,7 @@
 
 \section{Introduction}
 
-	The purpose of this work is to re-derive Hamiltonian and Lagrangian mechanics. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian and Lagrangian mechanics lack this physicality. They are taught as mathematical reformulations of Newtonian Mechanics which they are not. This work will begin with basic physical assumptions about a system in order to show it obeys Hamiltonian and Lagrangian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results.
+	The purpose of this work is to re-derive Hamiltonian and Lagrangian mechanics. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian and Lagrangian mechanics lack this physicality. They are taught as mathematical reformulations of Newtonian Mechanics which they are not. This work will begin with basic physical assumptions about a system in order to show it obeys Hamiltonian and Lagrangian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results. \emph{picture with blurry and crisp analogy.}
 
 \section{Infinitesimal Reducibility}
 	
@@ -14,19 +14,19 @@
 	The state of the system is reducible to the state of its infinitesimal parts. That is, giving the state of the whole system is equivalent to giving the state of its parts, which in turn is equivalent to giving the state of its subparts and so on.
 \end{assump}
 
-	We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions. (continue this explanation).
+	We begin with the physical condition that differentiates classical and quantum mechanics: Reducibility. In classical mechanics we consider systems which are infinitesimally reducible. This means that we can identify the state the system is in by giving the state all of its components, then the states of the components of the components and so on. Now we must note we are not discussing point particles here. Our classical particles are in fact small regions of the large system which can still be broken up into further smaller regions.
 	
-	\emph{Explain in practical term what reducibility is. Give examples and counterexamples. Ball and red marker. Electron and photon scattering.} For example consider a ball of reducible material. On this ball we could draw a red dot. If we then describe the state of the red dot and the rest of the ball we have given the state of the whole ball. But if we consider a ball of irreducible material i.e. an electron, we cannot describe the state of a dot drawn on its surface. We could not say for instance that a photon scattering with that electron interacts specifically with the part of the electron with the dot.
+	\emph{Explain in practical term what reducibility is. Give examples and counterexamples. Ball and red marker. Electron and photon scattering. Example needs work.} For example consider a ball of reducible material. On this ball we could draw a red dot. If we then describe the state of the red dot and the rest of the ball we have given the state of the whole ball. But if we consider a ball of irreducible material i.e. an electron, we cannot describe the state of a dot drawn on its surface. We could not say for instance that a photon scattering with that electron interacts specifically with the part of the electron with the dot.
 	
 \subsection{Constraint on Coordinate Transformations}
 
-	\emph{Describe what the process of subdivision is, and define the particle as the limit of that process.} We will still discuss the "particles" that make up a system but we should clarify that exact definition. These particles are not point particles. They are simply the limit of recursive subdivision of our reducible material. We could if we wanted continue to divide these particles. So we will continue to use "particle" to describe the small parts of our system.
+	\emph{Describe what the process of subdivision is, and define the particle as the limit of that process.} We will still discuss the "particles" that make up a system but we should clarify that exact definition. These particles are not point particles. They are simply the limit of recursive subdivision of our reducible material. We could if we wanted continue to divide these parts further if we so chose. As we proceed understand that our definition of particle refers simply to small regions of our homogeneous material.
 
 \begin{defn}
 	The state space of the whole system is $\mathcal{C}$. A particle is an infinitesimal subdivision. The state space of the particles is $\mathcal{S}$. Each state of the whole is a distribution over the states of the parts.
 \end{defn}
 
-	So now we want to identify our state in $\mathcal{S}$ with numbers so that all states are uniquely labeled.
+	So now we want to identify our state in $\mathcal{S}$ with numbers so that all states are uniquely labeled. This will allow us to describe more precisely the space and how the system moves within it.
 
 \begin{defn}
 	A state variable assigns one numerical quantity to each state. Formally, it is a map $\xi : \mathcal{S} \to \mathbb{R}$. A complete set of state variables fully identifies a state. Formally, it is an invertible  map $\xi^\alpha : S \rightarrow \mathbb{R}^n $.
@@ -36,7 +36,7 @@
 	
 	Consider a box with balls of different colors. Suppose the state of the whole system will be defined by the number of balls for each color. $\mathcal{S}$ is the set of possible colors. $\rho(s)$ is the number of balls for each color. For each set of colors, we can count the balls that match that set. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. The whole state $c$ is determined by the function $\rho : \mathcal{S} \to \mathbb{R}$.
 
-	If our state space is continuous, we have two things. $\rho : \mathcal{S} \to \mathbb{R}$ becomes a density and instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area.
+	If our state space is continuous, we must make two changes. $\rho : \mathcal{S} \to \mathbb{R}$ becomes a density and instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area.
 
 %NOTE TO US: we are being subtle, and pretending that is just any integral, even though the fact that $\rho$ depends on the point constrains the problem.
 
@@ -54,15 +54,17 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	$\rho_c$ will transform as a scalar and a density under a change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
 \end{prop}
 
+	Armed with this knowledge we can derive our mathematical constraints on changes of state variables. We will look again at the integral $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$. Writing this in terms of our selected state variables we have $\mu(U) = \int_{\xi(U)} \rho(\xi^\alpha)d\xi^\alpha$. Now we consider a change of variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$. We then have $\mu(U) = \int_{\xi(U)} \rho(\xi^\alpha)d\xi^\alpha = \int_{\hat{\xi}(U)} \rho(\hat{\xi}^\beta)d\hat{\xi}^\beta$. Using our transformation rule we ca write $\int_{\hat{\xi}(U)} \rho(\hat{\xi}^\beta)d\hat{\xi}^\beta = \int_{\xi(U)} \rho(\hat{\xi}^\beta)\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right|d\xi^\alpha$. So in all our equality is $\mu(U) = \int_{\xi(U)} \rho(\xi^\alpha)d\xi^\alpha = \int_{\xi(U)} \rho(\hat{\xi}^\beta)\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right|d\xi^\alpha$. We can drop the integral to get $\rho(\xi^\alpha) = \rho(\hat{\xi}^\beta)\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right|$. But because $\rho$ is a density we know $\rho(\xi^\alpha) = \rho(\hat{\xi}^\beta)$ so we know $\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = 1$. \emph{how do we show differentiability??}
+
 \begin{prop}
 	A change of state variables must be differentiable and must have a unitary Jacobian i.e. $\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = 1$.
 \end{prop}
 
 \subsection{Unit Variables, Conjugate Pairs, and 2n Dimensional State Space}
 
-Talk about unit system in general: some choices are free, some are dependent. Give example of dependent/independent unit variables (like velocity down)
+\emph{Talk about unit system in general: some choices are free, some are dependent. Give example of dependent/independent unit variables (like velocity down)}
 
-If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$.
+	If we change one of these unit variables, we will also have to change any other state variables that depend on the definition of the unit we changed. For example if $q^1$ defines the position relative to the x-axis in meters and $k_1$ is the velocity relative to the x-axis in meters per second, a change in $q^1$ to kilometers would necessitate a change in $k_1$ to kilometers per second. So a change of units $\hat{q}^j = \hat{q}^j(q^i)$ will induce a unique change of state variables $\hat{\xi}^b = \hat{\xi}^b(\xi^a)$. Some choices of unit variables are independent of each other i.e. charge and mass, but many are not i.e. distance and velocity along the same axis. 
 
 \begin{defn}
 	We define a unit variable $q \in \xi^a$ as a state variable that is the definition of a unit. The set of unit variables $q^i \in \xi^a$ defines a unit system upon which the other state variables depend.
