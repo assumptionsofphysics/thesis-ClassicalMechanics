@@ -27,21 +27,19 @@
 	 Now to be clear we will still discuss the classical "particles" that make up a system but we should clarify our precise definition. We take our system and continually divide it until parts of the system are small enough that we can say they occupy one state in their state space. 
 	 \emph{potential example: For example let's consider a system of blocks attached to each other in a line with springs. This is a reducible system because I can describe the state of the system as a whole by describing the states of the blocks. Now we divide this system into individual blocks. These will be our classical particles. We can say that an individual block is in precisely one state. We could in principle continue and divide into smaller and smaller blocks, but the resulting subdivisions wouldn't do anything. The blocks are the limit of our recursive subdivision.} Evidently our classical particles are not point particles.
 	
-\subsection{Constraint on Coordinate Transformations}
-
-	Now we want to talk about the state of our composite system and the state of its particles in a precise way. Formally that can be defined as follows:	
-
-\begin{defn}
-	Let $\mathcal{C}$ be the state space of a system. The system is \textbf{infinitesimally reducible} to the infinitesimal parts (i.e. particles) identified by the state space $\mathcal{S}$ if there exists a measure $dS$ such that for every $c \in \mathcal{C}$ we can find a $\rho : \mathcal{S} \to \mathbb{R}$ such that for every $U \subseteq \mathcal{S}$ the integral $\mu(U) = \int_U \rho(s) dS$ corresponds to the fraction of the system whose parts occupy those states, which means $\mu(S) = 1$.
-\end{defn}
-
-	If we want to further describe the state of the system we need to identify our states in $\mathcal{S}$ with numbers so that all states are uniquely labeled. This will allow us to describe more precisely the space using things like areas and densities and how the system moves within its state space.\emph{examples} For example 
-	
 	The state of the system is given by describing the state of its particles. Each state of the whole system is uniquely determined by the state of the particles meaning that given a distribution of the particles over their states, we can determine exactly the state of the whole system.
 	
 	Consider a box with balls of different colors. Suppose the state of the whole system will be defined by the number of balls for each color. We say $\mathcal{S}$ is the set of possible colors. We can define our distribution $\rho(s)$ as the number of balls of each color. For each set of colors, we can count the balls that are in that set. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. The whole state $c$ is determined by the function $\rho : \mathcal{S} \to \mathbb{R}$.
 
 	If our state space is continuous, we must make two changes. First, $\rho : \mathcal{S} \to \mathbb{R}$ becomes a density and second, instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. \emph{is this correct for $d\mathcal{S}$?}
+	
+\begin{defn}
+	Let $\mathcal{C}$ be the state space of a system. The system is \textbf{infinitesimally reducible} to the infinitesimal parts (i.e. particles) identified by the state space $\mathcal{S}$ if there exists a measure $dS$ such that for every $c \in \mathcal{C}$ we can find a $\rho : \mathcal{S} \to \mathbb{R}$ such that for every $U \subseteq \mathcal{S}$ the integral $\mu(U) = \int_U \rho(s) dS$ corresponds to the fraction of the system whose parts occupy those states, which means $\mu(S) = 1$.
+\end{defn}	
+	
+\subsection{Constraint on Coordinate Transformations}	
+
+	If we want to further describe the state of the system we need to identify our states in $\mathcal{S}$ with numbers so that all states are uniquely labeled. This will allow us to describe more precisely the space using things like areas and densities and how the system moves within its state space.\emph{examples} For example 
 
 \begin{defn}
 	A state variable assigns one numerical quantity to each state. Formally, it is a map $\xi : \mathcal{S} \to \mathbb{R}$. A complete set of state variables fully identifies a state. Formally, it is an invertible  map $\xi^a : S \rightarrow \mathbb{R}^n $.
