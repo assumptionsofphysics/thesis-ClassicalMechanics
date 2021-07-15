@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage{assumptionsofphysics}
-\usepackage{graphicx}
+%\graphicspath{{images/}}
 \begin{document}
 
 
@@ -39,13 +39,11 @@ Diagram 1 here
 	Let's start in the case of a discrete system as it is conceptually simpler. Consider a box with balls of different colors as our composite system. Suppose the state of the whole system will be defined by the number of balls for each color. We can formally define the \textit{state space} of the balls (our classical particles in this case) as $\mathcal{S}$ which spans all of the possible colors of the balls. We can define the number of balls of each color as a \textit{distribution}, $\rho$, over this state space $\mathcal{S}$. For each set of colors, we can count the balls that are in that set; call this function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. The state space of the composite system is $\mathcal{C}$. For each state $c \in \mathcal{C}$ we have exactly one $\rho$.
 	
 Diagrams 2, 3 here
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{images/diagram2.jpg}
-	\caption{A description}
-	\label{fig_functionmap}
-\end{figure}
+%\begin{figure}
+%\includegraphics{diagram2}
+%\includegraphics{diagram3}
+%\end{figure}
+%\includegraphics[width=\textwidth]{images/diagram2.jpg}
 	
 	\emph{more physical justification needed?}
 
@@ -58,16 +56,10 @@ Diagrams 2, 3 here
 \subsection{Constraint on Coordinate Transformations}	
 
 	If we want to further describe the state of the system we need to identify our states in $\mathcal{S}$ with numbers so that all states are uniquely labeled. This will allow us to describe more precisely how the system moves within this state space. For example, consider a cannon that fires a collection of cannon balls. Let's say that these balls all land at different places along an axis. Without defining a \textit{state variable} we can only say that the balls landed in some order; we have no notion of how far apart any of them are. To be specific the distance along our axis is our state variable. It defines a set of numerical values that label our state space. Without this labeling we lack a precise way to compare the states of the individual particles.
-	
-% We use properties and quantities to identify states. State variables are continuous quantities that we use to identify states.	Convince the reader that a state variable is a map from a state to a continuous value.
 
 \begin{defn}
 	A state variable assigns one numerical quantity to each state. Formally, it is a map $\xi : \mathcal{S} \to \mathbb{R}$. A complete set of state variables fully identifies a state. Formally, it is an invertible  map $\xi^a : S \rightarrow \mathbb{R}^n $.
 \end{defn}
-
-% Now that we have state variables, we can express the distribution in terms of the state variables. Show that there is a problem in doing that.
-
-% Show what are the requirements that the density has to satisfy to address the problem.
 
 \emph{Discussion on units. Change order around put coordinate dependence end of 1st paragraph. Clarify density vs distribution; invariant vs dependent.} 
 	
