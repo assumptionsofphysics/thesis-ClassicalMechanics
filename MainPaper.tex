@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{assumptionsofphysics}
-%\graphicspath{{images/}}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 \begin{document}
 
 
@@ -37,10 +38,9 @@ Diagram 1 here
 	Let's start in the case of a discrete system as it is conceptually simpler. Consider a box with balls of different colors as our composite system. Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all of the possible colors of the balls. We can define the number of balls of each color as a \textit{distribution}, $\rho$, over this state space $\mathcal{S}$. For each subset of colors, we can count the number balls that are those colors; call this function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. The state space of the composite system is $\mathcal{C}$. For each state $c \in \mathcal{C}$ we have exactly one $\rho$.
 	
 Diagrams 2 here
-%\begin{figure}
-%\includegraphics{diagram2}
-%\end{figure}
-%\includegraphics[width=\textwidth]{images/diagram2.jpg}
+\begin{figure}
+\includegraphics[width=\textwidth]{diagram2.jpg}
+\end{figure}
 	
 	If our state space is continuous the main ideas of our justification above hold, but we must make two changes to the formalization. First, $\rho : \mathcal{S} \to \mathbb{R}$ becomes a distribution of states over areas of the space and second, for $\mu$ instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. \emph{is this correct for $d\mathcal{S}$?} We will continue to work in the continuous case unless otherwise stated.
 	
