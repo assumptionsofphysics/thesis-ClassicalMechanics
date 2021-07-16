@@ -27,24 +27,24 @@ Diagram 1 here
 \centerline{\includegraphics[width=\linewidth,angle=90,scale=.3]{reddotdiagram.jpg}}
 \caption{Motion of our ball and red dot example}
 \end{figure}
+
+	\emph{motivate the uniqueness of the distribution}	
 	
-	Each state of the whole system is uniquely determined by the states of its parts, meaning that given the states of the parts, we can determine exactly the state of the whole system. Two identical systems are in the same state if and only if all of their parts are in the same states.
-	
-	\emph{decided if quantum counter example is useful}
-	
-	 %Consider a ball of reducible material. On this ball we could draw a red dot. If we then describe the state of the red dot and the rest of the ball we have given the state of the whole ball. But if we consider a ball of irreducible material i.e. an electron, we cannot describe the state of a dot drawn on its surface. We could not say for instance that a photon scattering with that electron interacts specifically with the part of the electron with the dot. That is because the electron is not reducible; we cannot describe the state of the electron by breaking it into smaller parts and describing those parts. We cannot describe a process in which something interacts with only part of the electron; everything always interacts with its entirety. 
+	Each state of the whole system is uniquely determined by the states of its parts, meaning that given the states of the parts, we can determine exactly the state of the whole system. Two identical systems are in the same state if and only if all of their parts are in the same states. This gives us an invertible map between the state of our whole system and the states of its parts.
+		
+	 %If we consider a ball of irreducible material i.e. an electron, we cannot describe the state of a dot drawn on its surface. We could not say for instance that a photon scattering with that electron interacts specifically with the part of the electron with the dot. That is because the electron is not reducible; we cannot describe the state of the electron by breaking it into smaller parts and describing those parts. We cannot describe a process in which something interacts with only part of the electron. 
 	 
 	 \emph{Describe what the process of subdivision is, and define the particle as the limit of that process}
 	 
-	 We have described reducibility, but what does it mean to be infinitesimally reducible? In short we take our parts to be the limit of recursive subdivision of the system; we call these smallest subdivisions classical particles. What does this mean physically? Continuing our ball and red dot example, let's draw more red dots on the surface of the ball and take the limit as the size of the dots goes to zero. Because we assume the ball is an infinitesimally reducible system, given the state of the whole ball, we know the states of all of the red dots on drawn on it. The dots do not ever become points. They are always circles with radii that are greater than zero. No dot is a point particle, it is rather an infinitesimally small subdivision of the ball; our classical particle. Assuming a system to be infinitesimally reducible means that given the state of the whole system, we can describe the states of all the infinitesimally small parts of the system. Now we must codify this idea formally.
+	 We have described reducibility in general, but what does it mean to be infinitesimally reducible? In short we continually divide our system until we reach the limit of recursive subdivision; we call these smallest subdivisions classical particles. What does this mean physically? Continuing our previous example, imagine we cover the surface of the ball in red dots. We then draw even smaller dots. We repeat this process until the radius of the dots is approaching zero. Because we assume the ball is a reducible system, given the state of the whole ball, we know the states of all of the red dots drawn on it. It is important to note that the dots do not ever become points. They are always have radii that are greater than zero. No dot is a point particle, rather they are infinitesimally small subdivisions. We can always divide them again. The limit of these subdivisions are our classical particles. Assuming a system to be infinitesimally reducible means that given the state of the whole system, we can describe the states of all the infinitesimally small parts of the system. Now we must codify this idea formally.
 	 
-	 \emph{translate 2 paragraphs above into formal system}
+	 \emph{translate 3 paragraphs above into formal system}
 	
 	Let's start in the case of a discrete system as it is conceptually simpler. Consider a box with a fixed number of balls of varying colors as our whole system. Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. The state of one ball is a point $s \in \mathcal{S}$. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. We can define the number of balls of each color as a \textit{distribution}, $\rho$, over this state space $\mathcal{S}$. This distribution is unique to each state of the whole system. Two identical systems are in the same state if their distributions are equivalent, so for each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
 
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
-\caption{Two different states of the system map to two different distributions over $\mathcal{S}$. In this case $\mathcal{S}$ is continuous.}
+\caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
 \end{figure}
 	
 	For each subset of colors in $\mathcal{S}$, we can count the number balls that are those colors; call this counting function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. We will normalize this counting function by defining $\mu(S) = 1$.
