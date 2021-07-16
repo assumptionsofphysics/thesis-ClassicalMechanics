@@ -23,8 +23,8 @@ Diagram 1 here
 	
 	Let's consider a ball that we throw through the air. This ball will follow some path through the air until it hits the ground. We can describe the state of the ball at a point in time by giving its position and momentum. Now, say we draw a red dot on this ball. Then if we describe the motion of the ball through the air, we have also described the motion of the red dot through the air as well as the rest of the ball. The ball is a reducible system meaning giving the state of the whole is equivalent to giving the state of the parts. So we know from the state of the composite or whole system the states of all its parts. The internal dynamics of the system are accessible. Additionally if we give the motion of the red dot through the air, as well as how the rest of the ball moves, we know the motion of the whole ball. The state of the whole system can be known from the states of its parts. 
 	
-\begin{figure}[h]
-\centerline{\includegraphics[width=\textwidth,angle=90,scale=.25]{reddotdiagram.jpg}}
+\begin{figure}{!hb}
+\centerline{\includegraphics[width=\linewidth,angle=90,scale=.3]{reddotdiagram.jpg}}
 \caption{Motion of our ball and red dot example}
 \end{figure}
 	
@@ -42,14 +42,14 @@ Diagram 1 here
 	
 	Let's start in the case of a discrete system as it is conceptually simpler. Consider a box with a fixed number of balls of varying colors as our whole system. Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. The state of one ball is a point $s \in \mathcal{S}$. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. We can define the number of balls of each color as a \textit{distribution}, $\rho$, over this state space $\mathcal{S}$. This distribution is unique to each state of the whole system. Two identical systems are in the same state if their distributions are equivalent, so for each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
 
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
 \caption{Two different states of the system map to two different distributions over $\mathcal{S}$. In this case $\mathcal{S}$ is continuous.}
 \end{figure}
 	
 	For each subset of colors in $\mathcal{S}$, we can count the number balls that are those colors; call this counting function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. We will normalize this counting function by defining $\mu(S) = 1$.
 	
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram3.jpg}}
 \caption{Discrete example of our counting function $\mu(U)$.}
 \end{figure}
@@ -58,7 +58,7 @@ Diagram 1 here
 	
 	If our state space is continuous the main ideas above hold, but we must make two changes to the formalization. First, $\rho : \mathcal{S} \to \mathbb{R}$ becomes a density of states over the space and second, for $\mu$ instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. We will continue to work in the continuous case unless otherwise stated.
 	
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.45]{diagram4.jpg}}
 \caption{Continuous example of our counting function $\mu(U)$.}
 \end{figure}
