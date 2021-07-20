@@ -69,6 +69,23 @@ Diagram 1 here
 	
 \subsection{Constraint on Coordinate Transformations}	
 
+We can now express density in terms of state variables. These state variables must be differentiable.
+
+Prop - the state space must be a differentiable manifold
+
+How should the change of state variable affect the density (units/value)?
+
+On one side, it should be invariant. rho(s), like a temperate
+
+On the other hand, units of the density are affected by the units of the state variables (mass example, include cart -> polar)
+
+How do we solve this? Restrict state variable to "canonical", those that allow us to express the density in the correct units.
+
+Jacobian must be unitary under canonical transformation
+
+Prop - the state space must allow state variables that allow the expression of the density in the correct units (canoncial). Canonical transformations must have unitary and dimensionless Jacobian.
+
+
 	\emph{motivate necessity of labeling state space with numbers}	
 	
 	We know that for a continuous state space $\rho$ should be a density. This requires some mathematical considerations. Let's consider a typical example of a density: mass distributed over three dimensional space $\mathcal{M}$. We can talk about points in this space in a coordinate independent way.\footnote{Throughout this work we will use "coordinate" and "state variable" interchangeably. Coordinates usually denote some kind of spatial unit while state variables could represent any quantity, but in state space these are functionally the same.} Take a point $A \in \mathcal{M}$; this is the same point in all references, and we do not need to have a coordinate system defined to talk about point $A$. Now, if I have a mass distribution, and I ask you how much mass is there in a region $U \subseteq \mathcal{M}$, this is also coordinate independent as the definition of $U$ does not require a coordinate system. If I ask for the mass density at a point, however, I need to specify a quantity like $kg/m^3$. Formally, I have to specify a \textit{unit system} of the space. In math terms this means that $\rho_m : \mathbb{R}^3 \to \mathbb{R}$ not $\rho_m : \mathcal{M} \to \mathbb{R}$. We cannot define a map directly from $\mathcal{M}$ to $\mathbb{R}$. If we were to change our unit system to $g/km^3$ the actual numerical value of the density at each point changes; the density varies with the choice of coordinates.\footnote{Here we used "coordinate" and "unit" interchangeably. We will see later what the exact definition of a unit is, but for now they can be thought of as equivalent.}
