@@ -40,7 +40,7 @@ Diagram 1 here
 	 
 	 \emph{translate 3 paragraphs above into formal system}
 	
-	Let's start with a discrete system as it is conceptually simpler (This system  is reducible but not infinitesimally so; it serves as a good example of the principle). Consider a box with a fixed number of balls of varying colors as our whole system. Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
+	Let's start with a discrete system as it is conceptually simpler Consider a box with a fixed number of balls of varying colors as our whole system.\footnote{this is not an example of an infinitesimally reducible system as the balls are the limit of its reducibility, but it serves as an illustrative example.} Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
 
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
@@ -68,23 +68,6 @@ Diagram 1 here
 \end{defn}	
 	
 \subsection{Constraint on Coordinate Transformations}	
-
-We can now express density in terms of state variables. These state variables must be differentiable.
-
-Prop - the state space must be a differentiable manifold
-
-How should the change of state variable affect the density (units/value)?
-
-On one side, it should be invariant. rho(s), like a temperate
-
-On the other hand, units of the density are affected by the units of the state variables (mass example, include cart -> polar)
-
-How do we solve this? Restrict state variable to "canonical", those that allow us to express the density in the correct units.
-
-Jacobian must be unitary under canonical transformation
-
-Prop - the state space must allow state variables that allow the expression of the density in the correct units (canoncial). Canonical transformations must have unitary and dimensionless Jacobian.
-
 
 	\emph{motivate necessity of labeling state space with numbers}	
 	
