@@ -21,7 +21,7 @@ Diagram 1 here
 	
 	\emph{Explain in practical terms what reducibility is}
 	
-	What does it mean physically for a system to be reducible? Let's consider a ball of reducible material that we throw through the air. This ball will follow some path. We can fully describe the state of the ball by its motion through the air. Now, say we draw a red dot on this ball. Then if we fully describe the motion of the ball, we have also described the motion of the red dot. The ball is a reducible system thus giving the state of the whole is equivalent to giving the state of the parts. The internal dynamics of the system are accessible meaning we can know the states of the parts of the system given knowledge of the state of the whole. Additionally if we give the motion of the red dot through the air, as well as how the rest of the ball moves, we know the motion of the whole ball. The state of the whole system can be known from the states of its parts. 
+	What does it mean physically for a system to be reducible? Let's consider a ball that we throw through the air. This ball will follow some path. We can fully describe the state of the ball by its motion through the air. Now, say we draw a red dot on this ball. Then if we fully describe the motion of the ball, we have also described the motion of the red dot. The ball is a reducible system thus giving the state of the whole is equivalent to giving the state of the parts. The internal dynamics of the system are accessible meaning we can know the states of the parts of the system given knowledge of the state of the whole. Additionally if we give the motion of all possible red dots, we know the motion of the whole ball. The state of the whole system can be known from the states of its parts. 
 	
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\linewidth,angle=90,scale=.25]{reddotdiagram.jpg}}
@@ -30,7 +30,7 @@ Diagram 1 here
 
 	\emph{motivate the uniqueness of the distribution}	
 	
-	Each state of the whole system is uniquely determined by the states of its parts, meaning that given the set of states of the parts, we can determine exactly the state of the whole system. Two identical systems are in the same state if and only if all of their parts are in the same states. The same is true the other way around. The states of the parts of the system are uniquely determined by the state of the whole. Thus we have an invertible map between the state of our whole system and the states of its parts. In our example, this means that there is exactly one path traveled by the red dot per distinct state of the whole ball. So if we throw the ball with no angular velocity, the red dot will travel a parabola through the air. We could then throw the ball with the same linear velocity so that its center of mass travels the same path as before, but if the ball is spinning we have a different path traveled by the red dot. So from two distinct states of the overall system, one with angular velocity one without, we find two distinct sets of states of the parts of the system. One spiraling trajectory and one parabola.
+	Each state of the whole system is uniquely determined by the states of its parts, meaning that given the state of all parts, we can determine exactly the state of the whole system. Two identical systems are in the same state if and only if all of their parts are in the same states. The same is true the other way around. The states of the parts of the system are uniquely determined by the state of the whole. Thus we have an invertible map between the state of our whole system and the states of its parts. In our example, this means that there is exactly one path traveled by the red dot per distinct state of the whole ball. So if we throw the ball with no angular velocity, the red dot will travel a parabola through the air. We could then throw the ball with the same linear velocity so that its center of mass travels the same path as before, but if the ball is spinning we have a different path traveled by the red dot. So from two distinct states of the overall system, one with angular velocity one without, we find two distinct sets of states of the parts of the system. One spiraling trajectory and one parabola.
 		
 	 %If we consider a ball of irreducible material i.e. an electron, we cannot describe the state of a dot drawn on its surface. We could not say for instance that a photon scattering with that electron interacts specifically with the part of the electron with the dot. That is because the electron is not reducible; we cannot describe the state of the electron by breaking it into smaller parts and describing those parts. We cannot describe a process in which something interacts with only part of the electron. 
 	 
@@ -40,7 +40,7 @@ Diagram 1 here
 	 
 	 \emph{translate 3 paragraphs above into formal system}
 	
-	Let's start with a discrete system as it is conceptually simpler. Consider a box with a fixed number of balls of varying colors as our whole system. Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
+	Let's start with a discrete system as it is conceptually simpler (This system  is reducible but not infinitesimally so; it serves as a good example of the principle). Consider a box with a fixed number of balls of varying colors as our whole system. Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
 
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
@@ -56,7 +56,7 @@ Diagram 1 here
 	
 	\emph{formalize continuous case}	
 	
-	If our system is continuous the main ideas above hold, but we must make two changes to the formalization. First, we write $\rho : \mathcal{S} \to \mathbb{R}$ as a density of states over the space and second, for $\mu$ instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. We will continue to work in the continuous case unless otherwise stated.
+	If our system is continuous the main ideas above hold, but we must make two changes to the formalization. First, we write $\rho : \mathcal{S} \to \mathbb{R}$ as a distribution of states over the space and second, for $\mu$ instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. We will continue to work in the continuous case unless otherwise stated.
 	
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.45]{diagram4.jpg}}
@@ -133,6 +133,27 @@ Diagram 4 here
 \end{prop}
 
 \emph{corollary conservation of areas/volumes? with diagram}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.5}
+ \begin{tabular}{| c | c | c |}
+ \hline
+ Name & Symbol & Map \\ [0.5ex] 
+ \hline\hline
+ Distribution or Density of States & $\rho_c$ & $\mathcal{S} \to \mathbb{R}$ \\
+ \hline
+ Counting function & $\mu$ & $\mathbb{P}(\mathcal{S}) \to \begin{cases}
+ \mathbb{Z} & \text{if \textrm{discrete}}\\
+ \mathbb{R} & \textrm{if continuous} \end{cases}$ \\ [2ex]
+ \hline
+ State variables & $\xi^a$ & $\mathcal{S} \to \mathbb{R}^n$ \\
+ \hline
+ Density & $\rho_\xi$ & $\mathbb{R}^n \to \mathbb{R}$ \\
+ \hline
+ Change of Variables & $\hat{\xi}^b(\xi^a)$ & $\mathbb{R}^n \to \mathbb{R}^n$ \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{Unit Variables, Conjugate Pairs, and 2n Dimensional State Space}
 
