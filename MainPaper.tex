@@ -211,27 +211,31 @@ Diagram 4 here showing transform as density and invariance
 	
 	Another example is the set energy, entropy, and temperature. If we define the units of energy and entropy, we have no choice in the units of temperature because in the relation $T dS = dU \to T = \frac{dU}{dS}$ we can see that the units of temperature must be equivalent to the units of energy divided by the units of entropy. We could just as easily define the units of energy and temperature which would give us the units of entropy though the same equation.
 	
-	 We can define a \textit{unit system} using a select number of our state variables which we will call \textit{unit variables}. These unit variables will define the fundamental units underlying all other variables. Changing these unit variables will induce a change in all of the other state variables that rely on the definition of that unit.
+	 We can define a \textit{unit system} using a select number of our state variables which we will call \textit{unit variables}. These unit variables will define the fundamental units underlying all other variables. Changing these unit variables will induce a change in all of the other state variables that rely on the definition of that unit. Unit variables are independent of one another. For example, the definitions of temperature and time have nothing to do with one another. This means that we can consider changes of one unit variable independently of the others in a unit system.
 
 \begin{defn}
-	We define a unit variable $q \in \xi^a$ as a state variable that is the definition of a unit. The set of unit variables $q^i \in \xi^a$ defines a unit system upon which the other state variables depend.
+	We define a unit variable $q \in \xi^a$ as a state variable that is the definition of a unit. The set of unit variables $q^i \in \xi^a$ defines a unit system upon which the other state variables depend. Unit variables are independent of one another.
 \end{defn}
 
 	\emph{what actually happens under change of unit variables?}
 
 	Now we want to understand what happens under a change of unit variables. We know that the Jacobian of any canonical transformation is unitary, so we must have a change of variables that satisfies this. We also know that a change of unit variables will induce a change in the other state variables because every state variable is either a unit variable, or its units are derived from the definition of a unit variable. So we will ourselves change only the unit variables; the other state variables must change in accordance with the new definitions of units.
 	
+	We also know that a change of state variables will be unique. If...
+	
 	Let's start with the simplest case: one unit variable suffices to describe our unit system. We then can write our set of state variables as $\xi^a = \{q,k^\mu\}$ where $k^\mu$ could represent any number of other state variables. Let's suppose we perform a change of units. We then have $\hat{q}^j = \hat{q}^j(q^i)$. How must our set $\{k^\mu\}$ change in order to ensure a unitary Jacobian? Our Jacobian matrix will be of the form $$1 = \left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = \begin{vmatrix}
 \frac{\partial \hat{q}}{\partial q} & \frac{\partial \hat{q}}{\partial k^\mu} \\
 \frac{\partial \hat{k}^\nu}{\partial q} & \frac{\partial \hat{k}^\nu}{\partial k^\mu}
 \end{vmatrix}.$$
-Because $\hat{q}$ has no dependence on $k^\mu$ we know that $\|\frac{\partial \hat{q}}{\partial k^\mu}\| = 0$. This means that $\|\frac{\partial \hat{q}}{\partial q}\frac{\partial \hat{k}^\nu}{\partial k^\mu}\| = 1$. We know that $\hat{q}$ only depends on $q$ so we can write $(\frac{\partial \hat{q}}{\partial q})^{-1} = \frac{\partial q}{\partial \hat{q}}$. So we then get $\frac{\partial \hat{k}^\nu}{\partial k^\mu} = \frac{\partial q}{\partial \hat{q}}$.
 
-	
-	Now we allow and arbitrary number of $q^i$'s to define our unit system. Using the same process as above we show that for each $q^i$ there must be exactly one $k^a$. This means that our state space $\mathcal{S}$ must be $2n$ dimensional and that our state variables come in pairs consisting of one unit variable and one dependent state variable. (The typical course in mechanics defines Hamiltonian Mechanics in terms of position-momentum pairs).\footnote{For a full, mathematically rigorous derivation see: PLACEHOLDER}
+	If there are no $k^\mu$ variables then our constraint equation becomes $\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = \left|\frac{\partial \hat{q}}{\partial q}\right| = 1$. This does not allow us to make an arbitrary change in units meaning this case is invalid. We must have one or more $k^\mu$ variable(s).
+
+	Because $\hat{q}$ has no dependence on $k^\mu$ we know that $\left|\frac{\partial \hat{q}}{\partial k^\mu}\right| = 0$. This means that $\left|\frac{\partial \hat{q}}{\partial q}\right|\left|\frac{\partial \hat{k}^\nu}{\partial k^\mu}\right| = 1$. We know that $\hat{q}$ only depends on $q$ so we can write $(\left|\frac{\partial \hat{q}}{\partial q}\right|)^{-1} = \left|\frac{\partial q}{\partial \hat{q}}\right|$. So we then get $\left|\frac{\partial \hat{k}^\nu}{\partial k^\mu}\right| = \left|\frac{\partial q}{\partial \hat{q}}\right|$. This provides only one constraint on our transformation. We know that we must have a unique transformation. So if we have two or more $k^\mu$ variables we cannot say that $q$ fully defines the unit system for all other state variables. Thus we must have exactly one $k^\mu$ variable and our manifold will be two dimensional.
+
+	Recall that we can change unit variables independently of one another. Let's consider the case where an arbitrary number of $q^i$ unit variables define our unit system. Now we can break our change of unit variables $\hat{q}^j = \hat{q}^j(q^i)$ into changes of individual unit variables. We know from our previous case that each unit variable will have exactly one $k^\mu$ paired with it. Thus we know that our state space is a 2n dimensional manifold and that each of our $q^i$ unit variables has exactly one \textit{conjugate} variable $k^\mu$.
 
 \begin{prop}
-	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ where the set $\{q^i\}$ defines the unit system. These state variables have a well defined transformation rule with a unitary Jacobian.
+	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k^\mu\}$ where the set $\{q^i\}$ defines the unit system. These state variables have a well defined transformation rule with a unitary Jacobian.
 \end{prop}
 
 \subsection{Degrees of Freedom, Areas in State Space, and Poisson Brackets}
