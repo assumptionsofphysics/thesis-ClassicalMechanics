@@ -98,18 +98,18 @@ Diagram 1 here
 
 	\emph{Write $\rho$ as a density. Clarify density vs distribution} 
 		
-	Expressing $\rho$ in terms of these state variables is the next natural step. Consider a cannon ball that is shot through the air. If the ball is spinning the position and momentum of each infinitesimal region of the ball will vary. Let the position and momentum in space be our state variables. The parts of the system will be distributed across these positions and momenta. Writing our distribution in terms of these variables will give us a density. This density is a map from our state variables to a numerical value that describes how much of the system occupies an infinitesimal region on this manifold.
-	
-	We know $\rho$ needs to be a map $\rho(\xi^a): \mathbb{R}^n \to \mathbb{R}$. %We know $\xi^a$ is an invertible map between $\mathbb{R}^n$ and our state space $\mathcal{S}$ so we can write its inverse as $\xi^{-1} : \mathbb{R}^n \to \mathcal{S}$. Taking this we can write $\rho(s)$ with $s = \xi^{-1}(\xi^a)$ to get $\rho = \rho(\xi^{-1}(\xi^a))$. This will give us a density over our manifold. Note that the density and the distribution are distinct quantities; specifically the distribution is $\rho(s) : \mathcal{S} \to \mathbb{R}$ and the density is $\rho(\xi^a) : \mathbb{R}^n \to \mathbb{R}$. The density requires labeling the space with state variables to be defined while the distribution does not.
-\footnote{Note that we will use $\xi^a, \xi^b, \xi^c$ for state variables; $q^i, q^j, q^k$ for unit variables; $\xi^\alpha, \xi^\beta, \xi^\gamma$ for state variables that include time (i.e. four momentum). For distributions/densities we use $\rho$; where we need to distinguish between the two we will use $\rho(s)$ for the distribution and $\rho(\xi^a)$ for the density. States are indicated with $s$ and state variables with $\xi$. Note the duplicity of $\rho$, $s$, and $\xi$. We use $\rho(s)$ as $\mathcal{S} \to \mathbb{R}$; $\rho(\xi^a)$ as $\mathbb{R}^n \to \mathbb{R}$; $\rho(\hat{\xi}^b)$ as $\mathbb{R}^n \to \mathbb{R}$; $\xi^a(s)$ as $\mathcal{S} \to \mathbb{R}^n$; $s(\xi^a)$ as $\mathbb{R}^n \to \mathcal{S}$.
+	Expressing $\rho$ in terms of these state variables is the next natural step. Consider a cannon ball that is shot through the air. If the ball is spinning the position and momentum of each infinitesimal region of the ball will vary. Let the position and momentum in space be our state variables. The parts of the system will be distributed across these positions and momenta. Writing our distribution in terms of these variables will give us a density. This density is a map from our state variables to a numerical value that describes how much of the system occupies an infinitesimal region on this manifold. We know $\rho$ will be a map $\rho(\xi^a): \mathbb{R}^n \to \mathbb{R}$.\footnote{Note that we will use $\xi^a, \xi^b, \xi^c$ for state variables; $q^i, q^j, q^k$ for unit variables; $\xi^\alpha, \xi^\beta, \xi^\gamma$ for state variables that include time (i.e. four momentum). For distributions/densities we use $\rho$; where we need to distinguish between the two we will use $\rho(s)$ for the distribution and $\rho(\xi^a)$ for the density. States are indicated with $s$ and state variables with $\xi$. Note the duplicity of $\rho$, $s$, and $\xi$. We use $\rho(s)$ as $\mathcal{S} \to \mathbb{R}$; $\rho(\xi^a)$ as $\mathbb{R}^n \to \mathbb{R}$; $\rho(\hat{\xi}^b)$ as $\mathbb{R}^n \to \mathbb{R}$; $\xi^a(s)$ as $\mathcal{S} \to \mathbb{R}^n$; $s(\xi^a)$ as $\mathbb{R}^n \to \mathcal{S}$.
 Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) = \rho(s (\xi^a(s)))$.}
+	
+	 %We know $\xi^a$ is an invertible map between $\mathbb{R}^n$ and our state space $\mathcal{S}$ so we can write its inverse as $\xi^{-1} : \mathbb{R}^n \to \mathcal{S}$. Taking this we can write $\rho(s)$ with $s = \xi^{-1}(\xi^a)$ to get $\rho = \rho(\xi^{-1}(\xi^a))$. This will give us a density over our manifold. Note that the density and the distribution are distinct quantities; specifically the distribution is $\rho(s) : \mathcal{S} \to \mathbb{R}$ and the density is $\rho(\xi^a) : \mathbb{R}^n \to \mathbb{R}$. The density requires labeling the space with state variables to be defined while the distribution does not.
+
 
 	\emph{jacobian of density under coord change -> differentiability (value of density at origin)}
 
 	Under a change of coordinates $\rho(\xi^a)$ must have a well defined transformation rule. For example say we have the density as a function of $x$ and $y$. Then if we change to polar coordinates we now have $\rho(r,\theta)$. We can then write $$\rho(x,y) = \rho(r,\theta)\begin{vmatrix}
 \frac{\partial r}{\partial x} & \frac{\partial r}{\partial y} \\
 \frac{\partial \theta}{\partial x} & \frac{\partial \theta}{\partial y}
-\end{vmatrix}.$$ Evidently these partial derivatives need to be defined to have a well defined transformation of the value of $\rho$. In this example we do have one point at which the transformation is not well defined: the origin. We do not have well defined partial derivatives at the origin as theta is not well defined at that point. Thus our density is not well defined at the origin in polar coordinates. We will require that any state variables labeling our state space be differentiable so that we can define changes of these variables without introducing values of the state variables where our density is not well defined. So our state space will be a manifold labeled by differentiable state variables.
+\end{vmatrix}.$$ Evidently these partial derivatives need to be defined to have a well defined transformation of the value of $\rho$. In general our transformation rule is in the form $$\rho(\xi^a) = \rho(\hat{\xi}^b)\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right|$$. In our example above we do have one point at which the transformation is not well defined: the origin. We do not have well defined partial derivatives at the origin as theta is not well defined at that point. Thus our density is not well defined at the origin in polar coordinates. We will require that any state variables labeling our state space be differentiable so that we can define changes of these variables without introducing values of the state variables where our density is not well defined. So our state space will be a manifold labeled by differentiable state variables.
 
 \begin{prop}
 	The state space of our classical particles $\mathcal{S}$ is an n-dimensional \textbf{differentiable manifold}.
@@ -238,21 +238,6 @@ Diagram 4 here showing transform as density and invariance
 \end{prop}
 
 \subsection{Degrees of Freedom, Areas in State Space, and Poisson Brackets}
-
-\begin{itemize}
-	
-	\item (assuming we established k is inverse units of q) We now fix the units to count states. In statistical mechanics, we use "hbar" to do that. An independent degree of freedom is a pair of variables as seen before. Therefore hbar dq dk measures states, therefore it is useful to define p = hbar k. P now depends on both the unit of q and the unit we used for the states.
-	
-	\item definition a degree of freedom is a pair of variable (q, p) such that dq dp = dS
-	
-	\item We want to characterize whether any pair of state variable can form an independent degree of freedom. We define an operator that takes two variables and returns the following. If the two variables cannot form a degree of freedom, for example, they are both defining an indendent unit, then the operator returns 0. If they can define an independent degree of freedom, then they return the unit change of the area $df dg/dS$.
-	
-	\item Define $\{ f , g\}$ is an operator....
-	
-	\item Now, suppose we have canonical variable for all degrees of freeom $\{q^i, p_i\}$ such that $q^1$ and $p_1$ form the same degree of freedom identified by $f$ and $g$. Then there exists an invertible transformation that goes from one to the other. Therefore the poisson braket is the Jacobian. If the d.o.f. is spread over multiple canonical variables, one finds that (sum over all d.o.f. of the canonical variables).
-	
-	\item Prop The Poisson bracket is sum of partials... (formula)
-\end{itemize}
 
 \begin{defn}
 	A degree of freedom is a pair $\{q^i,k_i\}$. Degrees of freedom are orthogonal 2D surfaces in phase space.
