@@ -143,38 +143,27 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
- \begin{tabular}{p{0.2\textwidth} p{0.2\textwidth} p{0.5\textwidth}}
+ \begin{tabular}{p{0.1\textwidth} p{0.3\textwidth} p{0.5\textwidth}}
  \hline
- Space & Symbol & Description \\ [0.5ex] 
+ Symbol & Name & Description \\ [0.5ex] 
  \hline\hline
- State Space of Whole System & $\mathcal{C}$ & Contains all possible states of the whole system. Each state $c$ maps to a unique distribution $\rho(s)$\\ [2ex]
+ $\mathcal{C}$ & State Space of Whole System & Contains all possible states of the whole system. Each state $c$ maps to a unique distribution $\rho(s)$\\ [2ex]
  \hline
- State Space of Classical Particles & $\mathcal{S}$ & Contains all possible states of the parts of the system. Particles are distributed according to $\rho(s)$. \\ [2ex]
+ $\mathcal{S}$ & State Space of Classical Particles & Contains all possible states of the parts of the system. Particles are distributed according to $\rho(s)$. \\ [2ex]
  \hline
- Space-Time & $\mathcal{M}$ & Physical space. In our case three-dimensional without temporal axis. \\ [1ex] 
+ $\mathcal{M}$ & Space-Time & Physical space. In our case three-dimensional without temporal axis. \\ [1ex] 
  \hline
-\end{tabular}
-\end{center}
-
-\
-
-\begin{center}
-\renewcommand{\arraystretch}{2.5}
- \begin{tabular}{p{0.3\textwidth} p{0.2\textwidth} p{0.4\textwidth}}
+ $\rho(s)$ or $\rho(\xi^a)$ & Distribution or Density of States & $\mathcal{S} \to \mathbb{R}$ \\
  \hline
- Function & Symbol & Map \\ [0.5ex] 
- \hline\hline
- Distribution or Density of States & $\rho(s)$ or $\rho(\xi^a)$ & $\mathcal{S} \to \mathbb{R}$ \\
- \hline
- Counting function & $\mu(U)$ & $\mathbb{P}(\mathcal{S}) \to \begin{cases}
+ $\mu(U)$ & Counting function & $\mathbb{P}(\mathcal{S}) \to \begin{cases}
  \mathbb{Z} & \text{if \textrm{discrete}}\\
  \mathbb{R} & \textrm{if continuous} \end{cases}$ \\ [2ex]
  \hline
- State variables & $\xi^a$ & $\mathcal{S} \to \mathbb{R}^n$ \\
+ $\xi^a$ & State variables & $\mathcal{S} \to \mathbb{R}^n$ \\
  \hline
- Density & $\rho(\xi^a)$ & $\mathbb{R}^n \to \mathbb{R}$ \\
+ $\rho(\xi^a)$ & Density & $\mathbb{R}^n \to \mathbb{R}$ \\
  \hline
- Change of Variables & $\hat{\xi}^b(\xi^a)$ & $\mathbb{R}^n \to \mathbb{R}^n$ \\ [1ex] 
+ $\hat{\xi}^b(\xi^a)$ & Change of Variables & $\mathbb{R}^n \to \mathbb{R}^n$ \\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
@@ -216,16 +205,14 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	
 	Now we must ask how a change of state variables should affect the units of our density $\rho(\xi^a)$. Let's consider a typical example of a density: mass distributed over three dimensional space $\mathcal{M}$. If I have a mass distribution, and I ask you how much mass is there in a region $U \subseteq \mathcal{M}$, this is coordinate independent as the definition of $U$ does not require a coordinate system.We can talk about points in this space without a defined coordinate system. Take a point $A \in \mathcal{M}$; this is the same point in all references, and we do not need to have a coordinate system defined to talk about point $A$. If I ask for the mass density at that point, however, I need to specify a quantity like $kg/m^3$. Formally, I have to specify the unit system of the space. In math terms this means that $\rho_m : \mathbb{R}^3 \to \mathbb{R}$ not $\rho_m : \mathcal{M} \to \mathbb{R}$. We cannot define a map directly from $\mathcal{M}$ to $\mathbb{R}$. If we were to change our unit system to $kg/cm^3$ the actual numerical value of the density at each point changes. The change of units labeling the space also mean that the units of the density change as well. We know that $\rho(\xi^a)$ will transform as a density, thus it must have these same properties. The labeling of the state space will affect its units. 
 	
-	The Jacobian of a change of variables will give the conversion factor of the units of the density. But we also know that the units of $\mu(U)$ will not change as the fraction of a system occupying a region of state space will always be a pure number. Earlier we said the Jacobian of a canonical transformation is \textit{unitary}. This means that not only is the value equal to one, but also that it is unit-less. 
-
-	We know that the Jacobian of any canonical transformation is unitary, so we must have a change of variables that satisfies this. We also know that a change of unit variables will induce a change in the other state variables because every state variable is either a unit variable, or its units are derived from the definition of a unit variable. So we will ourselves change only the unit variables; the other state variables must change in accordance with the new definitions of units such that the units of density do not change.
+	The Jacobian of a change of variables will give the conversion factor of the units of the density. But we also know that the units of $\mu(U)$ will not change as the fraction of a system occupying a region of state space will always be a pure number. Earlier we said the Jacobian of a canonical transformation is \textit{unitary}. This means that not only is the value equal to one, but also that it is unit-less. We also know that a change of unit variables will induce a change in the other state variables because every state variable is either a unit variable, or its units are derived from the definition of a unit variable. So we will ourselves change only the unit variables; the other state variables must change in accordance with the new definitions of units such that the units of density do not change.
 	
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=90,scale=.45]{diagram5.jpg}}
-\caption{Visualization of the how the units with which we label our space affect the density.}
+\caption{Visualization of the how the units with which we label our space affect the density. The important thing to note here is that while physically one meter and a hundred centimeters are the same, our mathematical system does not show this. This is where we as physicists must understand the differences between a physical system and a mathematical one.}
 \end{figure}
 
-	Let's start with the simplest case: one unit variable suffices to describe our unit system. We then can write our set of state variables as $\xi^a = \{q,k^\mu\}$ where $k^\mu$ could represent any number of other state variables. Let's suppose we perform a change of units. We then have $\hat{q}^j = \hat{q}^j(q^i)$. How must our set $\{k^\mu\}$ change in order to ensure a unitary Jacobian? Our Jacobian block matrix will be of the form $$1 = \left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = \begin{vmatrix}
+	Now we will examine formally this change of units. Let's start with the simplest case: one unit variable suffices to describe our unit system. We then can write our set of state variables as $\xi^a = \{q,k^\mu\}$ where $k^\mu$ could represent any number of other state variables. Let's suppose we perform a change of units. We then have $\hat{q} = \hat{q}(q)$. How must our set $\{k^\mu\}$ change in order to ensure a unitary Jacobian? Our Jacobian block matrix will be of the form $$1 = \left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = \begin{vmatrix}
 \frac{\partial \hat{q}}{\partial q} & \frac{\partial \hat{q}}{\partial k^\mu} \\
 \frac{\partial \hat{k}^\nu}{\partial q} & \frac{\partial \hat{k}^\nu}{\partial k^\mu}
 \end{vmatrix}.$$
@@ -237,13 +224,15 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	Recall that we can change unit variables independently of one another. Let's consider the case where an arbitrary number of $q^i$ unit variables define our unit system. Now we can preform $n$ individual changes of unit variables. We know from our previous case that each unit variable will have exactly one $k$ paired with it. Thus we know that our state space is a $2n$ dimensional manifold and that each of our $q^i$ unit variables has exactly one \textit{conjugate} variable $k_i$.
 
 \begin{prop}
-	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ where the set $\{q^i\}$ defines the unit system. These state variables have a well defined transformation rule with a unitary Jacobian.
+	The state space of the particles is $2n$ dimensional. The state variables are organized in pairs $\{q^i, k_i\}$ where the set $\{q^n\}$ defines the unit system. These state variables have a well defined transformation rule with a unitary Jacobian.
 \end{prop}
 
-	Now how do we ensure that our counting function $\mu(U)$ remains a pure number? We must constrain the units of our conjugate variables in order to do this. As we saw in figure [placeholder] a typical density changes as the variables used to label the space are changed. In our case however, we know that under a canonical change of variables our Jacobian is unitary. How can we understand this in terms of our change of units $\hat{q}^j = \hat{q}^j(q^i)$? We know we will have a corresponding change of conjugate variables $\hat{k}_j = \hat{k}_j(q^i,\hat{q}^j)$. We also know that the value of our volume element $d\xi^a = dq^i \land dk_i$ will not change in value or units. Thus we know that each $k_i$ must be of inverse units of its corresponding $q^i$. This means that any change in the unit variables $\{q^i\}$ will have a corresponding inverse change in conjugate variables $\{k_i\}$.\emph{change to differential justification}
+	%Now how do we ensure that our counting function $\mu(U)$ remains a pure number? We must constrain the units of our conjugate variables in order to do this. As we saw in figure [placeholder] a typical density changes as the variables used to label the space are changed. In our case however, we know that under a canonical change of variables our Jacobian is unitary. How can we understand this in terms of our change of units $\hat{q}^j = \hat{q}^j(q^i)$? We know we will have a corresponding change of conjugate variables $\hat{k}_j = \hat{k}_j(q^i,\hat{q}^j)$. We also know that the value of our volume element $d\xi^a = dq^i \land dk_i$ will not change in value or units. Thus we know that each $k_i$ must be of inverse units of its corresponding $q^i$. This means that any change in the unit variables $\{q^i\}$ will have a corresponding inverse change in conjugate variables $\{k_i\}$.\emph{change to differential justification}
+	
+	What are the units of the conjugate variables $k_i$? Taking an equality we used earlier we have $$\left|\frac{\partial \hat{k}_j}{\partial k_i}\right| = \left|\frac{d q^i}{d \hat{q}^j}\right|.$$ Evidently the change of units in $q^i$ induces an inverse change in the units of $k_i$. So we must have that the units of $k_i$ are the inverse of the units of $q^i$.
 	
 \begin{prop}
-	The units of conjugate variables $\{k_i\}$ are the inverse of the units of the corresponding unit variables $\{q^i\}$. The volume element $d\xi^a = dq^i \land dk_i$ is invariant in value and units under a canonical change of variables.
+	The units of conjugate variables $\{k_i\}$ are the inverse of the units of the corresponding unit variables $\{q^i\}$. The volume element $d\xi^{2n} = dq^n \land dk_n$ is invariant in value and units under a canonical change of variables.
 \end{prop}
 
 \subsection{Degrees of Freedom, Areas in State Space, and Poisson Brackets}
@@ -262,7 +251,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	\item Prop The Poisson bracket is sum of partials... (formula)
 \end{itemize}
 
-	We have seen that the volume element of our manifold $d\xi^a$ is conserved under a canonical transformation. How can we relate this differential to our measure $dS$? What units will we use to count states? The convention in statistical mechanics is to use $\hbar$. We will write $p = \hbar k$ so that $p$ depends not only on the unit of $q$, but also on the units used for the states. We then get the relation $dS = dq^i \land dp_i = \hbar d\xi^a$.
+	We have seen that the volume element of our manifold $d\xi^{2n}$ is conserved under a canonical transformation. How can we relate this differential to our measure $dS$? What units will we use to count states? The convention in statistical mechanics is to use $\hbar$. We will write $p = \hbar k$ so that $p$ depends not only on the unit of $q$, but also on the units used for the states. We then get the relation $dS = dq^n \land dp_n = \hbar^n d\xi^{2n}$.
 
 \begin{defn}
 	A degree of freedom is a pair $\{q^i,p_i\}$ such that $dS = dq^i \land dp_i$. Degrees of freedom are orthogonal 2D surfaces in phase space.
