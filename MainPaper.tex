@@ -231,6 +231,8 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 
 	%Now how do we ensure that our counting function $\mu(U)$ remains a pure number? We must constrain the units of our conjugate variables in order to do this. As we saw in figure [placeholder] a typical density changes as the variables used to label the space are changed. In our case however, we know that under a canonical change of variables our Jacobian is unitary. How can we understand this in terms of our change of units $\hat{q}^j = \hat{q}^j(q^i)$? We know we will have a corresponding change of conjugate variables $\hat{k}_j = \hat{k}_j(q^i,\hat{q}^j)$. We also know that the value of our volume element $d\xi^a = dq^i \land dk_i$ will not change in value or units. Thus we know that each $k_i$ must be of inverse units of its corresponding $q^i$. This means that any change in the unit variables $\{q^i\}$ will have a corresponding inverse change in conjugate variables $\{k_i\}$.\emph{change to differential justification}
 	
+	\emph{needs work}	
+	
 	What are the units of the conjugate variables $k_i$? Taking an equality we used earlier we have $$\left|\frac{\partial \hat{k}_j}{\partial k_i}\right| = \left|\frac{d q^i}{d \hat{q}^j}\right|.$$ Evidently the change of units in $q^i$ induces an inverse change in the units of $k_i$. 
 	
 \begin{prop}
@@ -253,17 +255,19 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	\item Prop The Poisson bracket is sum of partials... (formula)
 \end{itemize}
 
-	We have seen that the volume element of our manifold $d\xi^{2n}$ is conserved under a canonical transformation. How can we relate this differential to our measure $dS$? What units will we use to count states? The convention in statistical mechanics is to use $\hbar$. We will write $p = \hbar k$ so that $p$ depends not only on the unit of $q$, but also on the units used for the states. We then get the relation $dS = dq^n \land dp_n = \hbar^n d\xi^{2n}$.
+	We have seen that the volume element of our manifold $d \xi^{2n}$ is conserved under a canonical transformation. How can we relate this differential to our measure $dS$? What units will we use to count states? The convention in statistical and quantum mechanics is to use $\hbar$ as the units of number of states. We will write $p = \hbar k$ so that $p$ depends not only on the unit of $q$, but also on the units used for the count of states. We then get the relation $dS = dq^n \land dp_n = \hbar^n d\xi^{2n}$. Each individual pair of $\{q^i,p_i\}$  variables will form a 2D surface in phase space. These surfaces will be orthogonal to one another; we know this from the fact that we can change unit variables independently of one another. We will call these pairings \textit{degrees of freedom}.
 
 \begin{defn}
-	A degree of freedom is a pair $\{q^i,p_i\}$ such that $dS = dq^i \land dp_i$. Degrees of freedom are orthogonal 2D surfaces in phase space.
+	An individual degree of freedom (d.o.f.) is a pair $\{q^i,p_i \}$ such that $dS = {\displaystyle \prod_{i=1}^{n}} dq^i \land dp_i = dq^n \land dp_n = \hbar^n d\xi^{2n}$. Degrees of freedom are orthogonal 2D surfaces in phase space.
 \end{defn}
-	
+
+	Because of the orthogonality of our d.o.f.'s we can break our count of states into a count over each individual surface. For example imagine we have a phase space of four dimensions where $q^1,q^2$ are positions along the $x$ and $y$ axes and $p_1,p_2$ are momenta along those axes. We can count the total number of possible states by first counting the possible configurations of position and momentum in each direction, then multiplying these two counts together. In our space the degrees of freedom are completely separate meaning that the choice of a configuration in one has no effect on the choice of a configuration in the other.
+
 \begin{prop}
-	For each independent degree of freedom, the area given $\int_U \hbar dq^i dk_i = \int_U dq^i dp_i$ quantifies the number of possible configurations within the region $U$.
+	For each independent degree of freedom, the area given $\int_U \hbar dq^i dk_i = \int_U dq^i dp_i$ quantifies the number of possible configurations within the region $U$.The total number of possible states in a volume is given by the product ${\displaystyle \prod_{i=1}^{n}} (\int_{U_i} dq^i dp_i)$ where $U_i$ is the 2D projection of the volume onto each degree of freedom $\{q^i,p_i\}$.
 \end{prop}
 
-	How do we determine if a pair of variables forms a degree of freedom? We will define an operator that returns either 0 if the variables do not form a d.o.f. or returns the unit change of the area $\frac{dfdg}{dS}$.
+	How do we determine if a pair of variables forms a degree of freedom? Not all variables are compatible with each other. Consider our earlier example of 4D state space. We could not define the $x$-position and $y$-momentum as a degree of freedom because a choice of configuration would affect the choice of configuration over $x$-momentum and $y$-position. We will define an operator that returns either 0 if the variables do not form a d.o.f. or returns the unit change of the area $\frac{dfdg}{dS}$.
 
 \begin{defn}
 	The Poisson bracket is defined as $\{f,g\} = \frac{\partial f}{\partial x}\frac{\partial g}{\partial p} - \frac{\partial g}{\partial x}\frac{\partial f}{\partial p}$.
