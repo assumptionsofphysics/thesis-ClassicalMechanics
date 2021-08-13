@@ -277,7 +277,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$. It is the Jacobian of the transformation $dfdg \rightarrow dxdp$ i.e. $dfdg = \{f,g\}dxdp$.
 \end{prop}
 	
-\section{Reversible and Deterministic Evolution}
+\section{Deterministic and Reversible Evolution}
 
 \begin{itemize}
 	\item Describe what deterministic and reversible mean. Bijection from past states to future states. Not enough.
@@ -297,11 +297,13 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 \end{itemize}
 
 
-\begin{assump}[Reversible and Deterministic Evolution]
-	The system undergoes Reversible and Deterministic Evolution meaning given the state of the system at any time, its state at all past and future times is known.
+\begin{assump}[Deterministic and Reversible Evolution]
+	The system undergoes Deterministic and Reversible Evolution meaning given the state of the system at any time, its state at all past and future times is known.
 \end{assump}
 
-Particle states change in time. But we have a law of how to go from one state to the other. Bijection $\mathcal{T}_{\Delta t} : \mathcal{S} \to \mathcal{S}$ ... This only gives you the infinitesimal displacement in time.
+	A system undergoes deterministic and reversible evolution if there is a bijection from past states to future states. This is a necessary but not sufficient condition for our definition of this kind of evolution. 
+	
+	Imagine we have a damped harmonic oscillator. In a classical system we have a one to one/injective (and onto/surjective) map from past states to future states. But we also no 
 
 \begin{defn}
 	We write $\lambda: \mathbb{R} \rightarrow \mathcal{S}$ defined as $s = \lambda(t)$ as the evolution of the state of one particle. Now the density associated with the state at $t_0$ is given by $\rho_c(\lambda(t_0),t_0)$.
