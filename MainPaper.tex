@@ -301,9 +301,13 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	The system undergoes Deterministic and Reversible Evolution meaning given the state of the system at any time, its state at all past and future times is known.
 \end{assump}
 
-	A system undergoes deterministic and reversible evolution if there is a bijection from past states to future states. This is a necessary but not sufficient condition for our definition of this kind of evolution. 
+	A system undergoes deterministic and reversible evolution if there is a bijection from past states to future states. This is a necessary but not sufficient condition for our definition of this kind of evolution. We will see that not all systems for which we can write this bijection will undergo Hamiltonian evolution.
 	
-	Imagine we have a damped harmonic oscillator. In a classical system we have a one to one/injective (and onto/surjective) map from past states to future states. But we also no 
+	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one/injective (and onto/surjective) map from past states to future states. But we also know that as the system evolves the density of these states will concentrate and asymptotically approach the rest state. Our state variables will be position and momentum. Our state space will be a 2D plane. If we imagine that we copy this state space over time we can map the evolution of each classical particle. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. \emph{???} We then will write $S^a = \frac{d\xi^a}{dt}$. This will be a vector field in $\mathbb{R}^3$. 
+	
+	Diagram
+	
+	In our damped oscillator example this vector field will have a nonzero divergence i.e. 
 
 \begin{defn}
 	We write $\lambda: \mathbb{R} \rightarrow \mathcal{S}$ defined as $s = \lambda(t)$ as the evolution of the state of one particle. Now the density associated with the state at $t_0$ is given by $\rho_c(\lambda(t_0),t_0)$.
