@@ -305,18 +305,18 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	
 	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one/injective (and onto/surjective) map from past states to future states. But we also know that no matter the initial state, as the system evolves it will asymptotically approach its rest state. Because our state variables will be position and momentum we know that as the system evolves all of the classical particles will approach the same state. 
 	
-	We know that in the real world all measurements have finite precision. So at some point in the above example we will not be able to tell the state with the oscillator barely moving and the rest state; they will look the same. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. To avoid this problem we will say that for a system to undergo deterministic and reversible evolution, it must not only have a bijection from past states to future states, but also the density of states $\rho$ must be invariant in time. Now this does not mean that the classical particles cannot change state. It means that if we have a certain number of classical particles in a initial state, all of those particles and no others will end up in the same final state.
+	We know that in the real world all measurements have finite precision. So at some point in the above example we will not be able to tell the difference between state with the oscillator barely moving and the rest state; they will look the same. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. To avoid this problem we will say that for a system to undergo deterministic and reversible evolution, it must not only have a bijection from past states to future states, but also the density of states $\rho$ must be conserved over time. Now this does not mean that the classical particles cannot change state. It means that if we have a certain number of classical particles in a initial state, all of those particles and no others will end up in the same final state.
 	
-	If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. \emph{???} We then will write $S^a = \frac{d\xi^a}{dt}$. This vector field will  
+	If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. \emph{???} We then will write $S^a = \frac{d\xi^a}{dt}$. In our damped oscillator example this vector field will have a nonzero divergence i.e. $S^a = \frac{d\xi^a}{dt} \neq 0$ because the 
 	
 	Diagram
 	
-	In our damped oscillator example this vector field will have a nonzero divergence i.e. 
 	
-	As particle states move, the will "drag" along the same evolution all the particles that are associated with that state. This is going to tell you that the infinitesimal displacement is "divergenceless" (conserves density)
+	
+	As particle states move, the will drag along the same evolution all the particles that are associated with that state. This tells us that the infinitesimal displacement is divergenceless.
 
 \begin{prop}
-	The density $\rho_c(s,t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen. So we have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$. (diagram showing conserved volumes/areas)
+	The density $\rho(\xi^a,t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen. So we have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$.
 \end{prop}
 
 \begin{prop}
@@ -324,8 +324,6 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	$$d_tq^i = \partial_{p_i}H$$
 	$$d_tp_i = -\partial_{q^i}H$$
 \end{prop} 
-	
-	%The incredible thing here is that from two assumptions we can derive the entirety of Hamiltonian mechanics. 
 
 \section{Kinematic Equivalence}
 
