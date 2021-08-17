@@ -159,7 +159,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
  \hline
  $\mu(U)$ & Counting function & $\mathbb{P}(\mathcal{S}) \to \begin{cases}
  \mathbb{Z} & \text{if \textrm{discrete}}\\
- \mathbb{R} & \textrm{if continuous} \end{cases}$ \\ [2ex]
+ \mathbb{R} & \textrm{if continuous} \end{cases}$ \\ [2.3ex]
  \hline
  $\xi^a$ & State variables & $\mathcal{S} \to \mathbb{R}^n$ \\
  \hline
@@ -301,21 +301,19 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	The system undergoes Deterministic and Reversible Evolution meaning given the state of the system at any time, its state at all past and future times is known.
 \end{assump}
 
-	A system undergoes deterministic and reversible evolution if there is a bijection from past states to future states. This is a necessary but not sufficient condition for our definition of this kind of evolution. We will see that not all systems for which we can write this bijection will undergo Hamiltonian evolution.
+	A system undergoes deterministic and reversible evolution if there is a bijection from past states to future states. This is a necessary but not sufficient condition for our definition of this kind of evolution. We will see that not all systems for which we can write this bijection will undergo Hamiltonian evolution. As in section 2.2 we will begin in the simpler two-dimensional case. This will illustrate the necessary and sufficient conditions for a system to undergo deterministic and reversible evolution before we move to the general $2n$ dimensional general case. 
 	
-	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one/injective (and onto/surjective) map from past states to future states. But we also know that as the system evolves the density of these states will concentrate and asymptotically approach the rest state. Our state variables will be position and momentum. Our state space will be a 2D plane. If we imagine that we copy this state space over time we can map the evolution of each classical particle. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. \emph{???} We then will write $S^a = \frac{d\xi^a}{dt}$. This will be a vector field in $\mathbb{R}^3$. 
+	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one/injective (and onto/surjective) map from past states to future states. But we also know that no matter the initial state, as the system evolves it will asymptotically approach its rest state. Because our state variables will be position and momentum we know that as the system evolves all of the classical particles will approach the same state. 
+	
+	We know that in the real world all measurements have finite precision. So at some point in the above example we will not be able to tell the state with the oscillator barely moving and the rest state; they will look the same. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. To avoid this problem we will say that for a system to undergo deterministic and reversible evolution, it must not only have a bijection from past states to future states, but also the density of states $\rho$ must be invariant in time. Now this does not mean that the classical particles cannot change state. It means that if we have a certain number of classical particles in a initial state, all of those particles and no others will end up in the same final state.
+	
+	If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. \emph{???} We then will write $S^a = \frac{d\xi^a}{dt}$. This vector field will  
 	
 	Diagram
 	
 	In our damped oscillator example this vector field will have a nonzero divergence i.e. 
-
-\begin{defn}
-	We write $\lambda: \mathbb{R} \rightarrow \mathcal{S}$ defined as $s = \lambda(t)$ as the evolution of the state of one particle. Now the density associated with the state at $t_0$ is given by $\rho_c(\lambda(t_0),t_0)$.
-\end{defn}
-
-	%By our condition of Deterministic and Reversible evolution we must have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$ meaning this density of states is conserved over time. So all particles that begin in the same state will evolve through and end in the same states. Now going back to our integral $\int_{\Sigma} \rho_c\omega(d\Sigma)$ we will find that our region $\Sigma$ is mapped to a new region in state space as the system evolves, but the same fraction of the parts of the system will be found in that region.
 	
-As particle states move, the will "drag" along the same evolution all the particles that are associated with that state. This is going to tell you that the infinitesimal displacement is "divergenceless" (conserves density)
+	As particle states move, the will "drag" along the same evolution all the particles that are associated with that state. This is going to tell you that the infinitesimal displacement is "divergenceless" (conserves density)
 
 \begin{prop}
 	The density $\rho_c(s,t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen. So we have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$. (diagram showing conserved volumes/areas)
