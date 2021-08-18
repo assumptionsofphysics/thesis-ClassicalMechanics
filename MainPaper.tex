@@ -269,14 +269,16 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	For each degree of freedom, $\int_U \hbar dq^i dk_i = \int_U dq^i dp_i = \int_{U_i} dS^i$ quantifies the number of possible configurations within the region $U_i$. If all degrees of freedom are independent then the total number of possible states in a volume is given by the product ${\displaystyle \prod_{i=1}^{n}} \int_{U_i} dq^i dp_i$ where $U_i$ is the 2D projection of the volume onto each individual degree of freedom $\{q^i,p_i\}$.
 \end{prop}
 
-	How do we determine if a pair of variables forms a degree of freedom? Not all variables are compatible with each other. Consider our earlier example of 4D state space. We could not define the $x$-position and $y$-momentum as a degree of freedom because a choice of configuration would affect the choice of configuration over $x$-momentum and $y$-position. We will define an operator that returns either 0 if the variables do not form a d.o.f. or returns the unit change of the area $\frac{dfdg}{dS}$.
+	How do we determine if a pair of variables forms a degree of freedom? Not all variables are compatible with each other. Consider our earlier example of 4D state space. We could not define the $x$-position and $y$-momentum as a degree of freedom because a choice of configuration would affect the choice of configuration over $x$-momentum and $y$-position. To formalize this we will define an operator that takes two state variables $f,g$ and returns either 0 if the variables do not form a d.o.f. or returns the unit change of the area $dfdg/dS$. This operator is called a \textit{Poisson bracket}.
 
 \begin{defn}
 	The Poisson bracket is defined as $\{f,g\} = \frac{\partial f}{\partial x}\frac{\partial g}{\partial p} - \frac{\partial g}{\partial x}\frac{\partial f}{\partial p}$.
 \end{defn}
 
+	If $f$ and $g$ are canonical variables that form a d.o.f. then $\{f,g \} = 1$. 
+
 \begin{prop}
-	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$. It is the Jacobian of the transformation $dfdg \rightarrow dxdp$ i.e. $dfdg = \{f,g\}dxdp$.
+	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$. It is the Jacobian of the transformation $dfdg \rightarrow dxdp$ i.e. $dfdg = \{f,g\}dxdp$. \emph{x and p form same degree of freedom as f and g}
 \end{prop}
 	
 \section{Deterministic and Reversible Evolution}
@@ -303,22 +305,15 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	The system undergoes deterministic and reversible evolution meaning given the state of the system at any time, its state at all past and future times is known.
 \end{assump}
 
+	For a system to undergo deterministic and reversible evolution there must be a bijection between all past and future states. We must also have that the density of states, $\rho$ is conserved over time. Now this does not mean that our classical particles cannot change state. It means that if we have a certain number of classical particles in a initial state, all of those particles and no others will end up in the same final state. You might ask why we have the additional requirement of the conservation of the density when it seems the existence of the bijection would be sufficient for the evolution of our system to be reversible, meaning we know its past state from its current state, and deterministic, meaning we know its future state from its current state. Here is an example of a system for which we can write a bjection, but for which the density of states is not conserved.
 	
-	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one map from past states to future states. But we also know that no matter the initial state, as the system evolves it will asymptotically approach its rest state. Because our state variables will be position and momentum we know that as the system evolves all of the classical particles will approach the same state. 
-	
-	We know that in the real world all measurements have finite precision. So at some point in the above example we will not be able to tell the difference between state with the oscillator barely moving and the rest state; they will look the same. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. To avoid this problem we will say that for a system to undergo deterministic and reversible evolution, it must not only have a bijection from past states to future states, but also the density of states $\rho$ must be conserved over time. Now this does not mean that the classical particles cannot change state. It means that if we have a certain number of classical particles in a initial state, all of those particles and no others will end up in the same final state.
-	
-	If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. \emph{???} We then will write $S^a = \frac{d\xi^a}{dt}$. In our damped oscillator example this vector field will have a nonzero divergence i.e. $S^a = \frac{d\xi^a}{dt} \neq 0$ because the 
-	
-	Diagram
-	
-	
-	
-	As particle states move, the will drag along the same evolution all the particles that are associated with that state. This tells us that the infinitesimal displacement is divergenceless.
+	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one map from past states to future states. But we also know that no matter the initial state, as the system evolves it will asymptotically approach its rest state. Because our state variables will be position and momentum we know that as the system evolves all of the classical particles will approach the same state. We know that in the real world all measurements have finite precision. So at some point in the above example we will not be able to tell the difference between state with the oscillator barely moving and the rest state; they will look the same. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. This means in reality our system is not reversible as at a certain point we cannot deduce the past state of the system from its current state; thus the addition of the requirement that density be conserved is necessary.
 
 \begin{prop}
-	The density $\rho(\xi^a,t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen. So we have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$.
+	The density $\rho(\xi^a,t)$ in conserved. This means that while particles may change state over the course of the system's evolution, any particles that begin in the same state will be found in the same state throughout the evolution no matter what point in time is chosen. If we write the evolution of a state as $\lambda(t) = \xi^a$, we have $\rho(\lambda(t_0),t_0) = \rho(\lambda(t),t)$.
 \end{prop}
+
+	We will continue to consider a system with a 2D state space and state variables $\{q,p \}$. If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of each particle can be written as $\xi^a(t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. We then will write $S^a = \frac{d\xi^a}{dt} = \{\frac{dq}{dt},\frac{dp}{dt} \}$. In our damped oscillator example this vector field will have a nonzero divergence i.e. $S^a = \frac{d\xi^a}{dt} \neq 0$ because the 
 
 \begin{prop}
 	The above conditions are sufficient to say that our system is Hamiltonian and thus satisfies Hamilton's equations. So the evolution of the system can be written in the familiar way:
