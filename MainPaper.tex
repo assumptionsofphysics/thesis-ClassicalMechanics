@@ -255,7 +255,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	\item Prop The Poisson bracket is sum of partials... (formula)
 \end{itemize}
 
-	We have seen that the volume element of our manifold $d \xi^{2n}$ is conserved under a canonical transformation. How can we relate this differential to our measure $dS$? What units will we use to count states? The convention in statistical and quantum mechanics is to use $\hbar$ as the units of number of states. We will write $p = \hbar k$ so that $p$ depends not only on the unit of $q$, but also on the units used for the count of states. We then get the relation $dS = dq^n \land dp_n = \hbar^n d\xi^{2n}$. Each individual pair of $\{q^i,p_i\}$  variables will form a 2D surface in phase space. We will call these pairings \textit{degrees of freedom}.
+	We have seen that the volume element of our manifold $d \xi^{2n}$ is conserved under a canonical transformation. How can we relate this differential to our measure $dS$? What units will we use to count states? The convention in statistical and quantum mechanics is to use $\hbar$ as the units of number of states. We will write $p = \hbar k$ so that $p$ depends not only on the unit of $q$, but also on the units used for the count of states. This will allow us to relate state variables to states is a more precise way. We then get the relation $dS = dq^n \land dp_n = \hbar^n d\xi^{2n}$. Each individual pair of $\{q^i,p_i\}$  variables will form a 2D surface in phase space. We will call these pairings \textit{degrees of freedom}.
 
 \begin{defn}
 	An degree of freedom (d.o.f.) is a pair $\{q^i,p_i \}$ such that $dS^i = dq^i \land dp_i$. The measure $dS^i$ quantifies the number of possible states within an infinitesimal area on our surface.\footnote{Note that unless there is an explicit product or sum over $i$, it represents a fixed index. We are not using summation convention.}
@@ -272,13 +272,13 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	How do we determine if a pair of variables forms a degree of freedom? Not all variables are compatible with each other. Consider our earlier example of 4D state space. We could not define the $x$-position and $y$-momentum as a degree of freedom because a choice of configuration would affect the choice of configuration over $x$-momentum and $y$-position. To formalize this we will define an operator that takes two state variables $f,g$ and returns either 0 if the variables do not form a d.o.f. or returns the unit change of the area $dfdg/dS$. This operator is called a \textit{Poisson bracket}.
 
 \begin{defn}
-	The Poisson bracket is defined as $\{f,g\} = \frac{\partial f}{\partial x}\frac{\partial g}{\partial p} - \frac{\partial g}{\partial x}\frac{\partial f}{\partial p}$.
+	The Poisson bracket is defined as $\{f,g\} = \frac{\partial f}{\partial q}\frac{\partial g}{\partial p} - \frac{\partial g}{\partial q}\frac{\partial f}{\partial p}$.
 \end{defn}
 
-	If $f$ and $g$ are canonical variables that form a d.o.f. then $\{f,g \} = 1$. 
+	Let's suppose we have canonical variables for all our degrees of freedom $\{q^i,p_i\}$ such that $\{q^1,p_1\}$ form the same degree of freedom as our non canonical state variables $f$ and $g$. If $f$ and $g$ are canonical variables that form a d.o.f. then $\{f,g \} = dfdg/dS = 1$. If this operator returns a nonzero value that is not one we know that $f$ and $g$ are not canonical variables.  We know that because our degrees of freedom are independent and because we've limited ourselves to the use of differentiable state variables only we know there will exist an invertible transformation between $f,$ and $q,p$. If we recall that the Poisson bracket returns the unit change of area $dfdg/dS$, we see that the Jacobian of this transformation is precisely the Poisson bracket of $f$ and $g$ thus $dfdg = \{f,g\}dqdp$.
 
 \begin{prop}
-	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$. It is the Jacobian of the transformation $dfdg \rightarrow dxdp$ i.e. $dfdg = \{f,g\}dxdp$. \emph{x and p form same degree of freedom as f and g}
+	The Poisson bracket $\{f, g\}$ translates the densities of states into densities per unit area of $f, g$. It is the Jacobian of the transformation $dfdg \rightarrow dqdp$ i.e. $dfdg = \{f,g\}dqdp$.
 \end{prop}
 	
 \section{Deterministic and Reversible Evolution}
