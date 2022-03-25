@@ -4,6 +4,8 @@
 \graphicspath{{images/}}
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
+\usepackage{pgfplots}
+
 
 
 \title{From Two Assumptions to Hamilton's Mechanics}
@@ -22,6 +24,7 @@
 	 This work will begin with basic physical assumptions about a system in order to show it obeys Hamiltonian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results. 	
 	 
 \begin{figure}[!!ht]
+\begin{center}
 \begin{tikzpicture}
 
 \node [label={\textbf{The Classical Picture}}] (C) at (1.2,3){};
@@ -42,6 +45,7 @@
 \node at (1.2,0) {Lagrangian};
  
 \end{tikzpicture}
+\end{center}
 \caption{Venn diagram showing the relationship between our three favorite classical theories.}
 \end{figure}
 
@@ -78,6 +82,38 @@
 
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
+\caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(x\),
+    ylabel = {\(f(x)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:4.038, 
+    samples=100, 
+    color=red,
+]
+{-1*x^6+12*x^5-55*x^4+120*x^3-124*x^2+48*x+2};
+\addlegendentry{\( \rho (c_1) \)}
+
+\addplot [
+    domain=0:1.839, 
+    samples=100, 
+    color=blue,
+]
+{-1*x^4+x+x^3+x^2};
+\addlegendentry{\( \rho (c_2) \)}
+
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
 \end{figure}
 	

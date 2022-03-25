@@ -4,37 +4,12 @@
 \graphicspath{{images/}}
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
+\usepackage{pgfplots}
 \begin{document}
 \title{DrawingFigs}
 
-
-Work on basics of tikz package
-
 \begin{tikzpicture}
-\draw[gray, thick] (-1,0) -- (2,-4);
-\draw[gray, thick] (-1,-1) -- (2,2);
-\filldraw[black] (0,0) circle (2pt) node[anchor=west]{Intersection point};
-\end{tikzpicture}
-\newpage
-
-\pagestyle{empty}
-\def\firstcircle{(-2,0) circle (2.5cm)}
-\def\secondcircle{(2,0) circle (2.5cm)}
-\begin{tikzpicture}
-\draw \firstcircle node[above] {$Hamiltonian Mechanics$};
-\draw \secondcircle node [above] {$Newtonian Mechanics$};
-%\begin{scope}
-%      \clip \firstcircle;
-%      \fill[r] \secondcircle;
-%\end{scope}
-
-\end{tikzpicture}
-
-
-
-\newpage
-\begin{tikzpicture}
-\title{The Classical Picture}
+\title{Figure 1 Venn Diagram}
 
 \node [label={The Classical Picture}] (C) at (1.2,3.5){};
  
@@ -53,6 +28,36 @@ Work on basics of tikz package
 % Set intersection label
 \node at (1.2,0) {Lagrangian};
  
+\end{tikzpicture}
+\newpage
+
+\begin{tikzpicture}
+\title{C to S function}
+
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(x\),
+    ylabel = {\(f(x)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:4.038, 
+    samples=100, 
+    color=red,
+]
+{-1*x^6+12*x^5-55*x^4+120*x^3-124*x^2+48*x+2};
+\addlegendentry{\( \rho (c_1) \)}
+
+\addplot [
+    domain=0:1.839, 
+    samples=100, 
+    color=blue,
+]
+{-1*x^4+x+x^3+x^2};
+\addlegendentry{\( \rho (c_2) \)}
+
+
+\end{axis}
 \end{tikzpicture}
 
 \end{document}
