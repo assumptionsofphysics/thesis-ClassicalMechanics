@@ -5,6 +5,10 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
 \usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.18} 
+
+
 
 
 
@@ -17,7 +21,7 @@
 
 \section{Introduction}
 
-	The purpose of this work is to re-derive Hamiltonian and Lagrangian mechanics. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian and Lagrangian mechanics lack this physicality. They are taught as mathematical reformulations of Newtonian Mechanics which they are not. Many popular mechanics textbooks contain passages like this from Thorton and Marion's \textit{Classical Mechanics of Particles and Systems}: "... we need not formulate a \textit{new} theory of mechanics--the Newtonian theory is quite correct--but only devise an alternate method of dealing with complicated problems\cite{thornton_marion_2014}." This assumption of an equivalence between Newtonian and Hamiltonian mechanics is a misconception. In fact, the relationship between our three favorite classical theories is best described by figure one.
+	The purpose of this work is to re-derive Hamiltonian mechanics from base assumptions about a system. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian and Lagrangian mechanics lack this physicality. They are taught as mathematical reformulations of Newtonian Mechanics which they are not. Many popular mechanics textbooks contain passages like this from Thorton and Marion's \textit{Classical Mechanics of Particles and Systems}: "... we need not formulate a \textit{new} theory of mechanics--the Newtonian theory is quite correct--but only devise an alternate method of dealing with complicated problems\cite{thornton_marion_2014}." This assumption of an equivalence between Newtonian and Hamiltonian mechanics is a misconception. In fact, the relationship between our three favorite classical theories is best described by figure one.
 	
 	 This work will begin with basic physical assumptions about a system in order to show it obeys Hamiltonian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results. 	
 	 
@@ -78,10 +82,10 @@
 	 	
 	Let's start with a discrete system as it is conceptually simpler. Consider a box with a fixed number of balls of varying colors as our system.\footnote{This is not an example of an infinitesimally reducible system as the balls are the limit of its reducibility, but it serves as an illustrative example.} Suppose the state of the whole system is determined by the number of balls of each color. We will define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors a ball can be. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls in the box of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
 
-\begin{figure}[!ht]
-\centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
-\caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
-\end{figure}
+%\begin{figure}[!ht]
+%\centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
+%\caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
+%\end{figure}
 
 \begin{figure}
 \begin{center}
@@ -90,6 +94,8 @@
     axis lines = left,
     xlabel = \(s\),
     ylabel = {\( \rho (s) \)},
+    yticklabels={,,},
+    xticklabels={,,},
     ymin = 0,
 ]
 %Below the red parabola is defined
@@ -113,15 +119,51 @@
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
+\caption{Two different states of the whole system map to two different distributions of the parts of the system over $\mathcal{S}$. Functions are not normalized.}
 \end{figure}
 	
 	For each subset $U$ of $\mathcal{S}$, we can count the number balls that are those colors; call this counting function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $$\mu(U) = \frac{\sum_{s \in U} \rho(s)}{\sum_{s \in \mathcal{S} \rho(s)}}.$$ This functions is normalized by definition because $\mu(S) = 1$.
 	
-\begin{figure}[!ht]
-\centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram3.jpg}}
-\caption{Discrete example of our counting function $\mu(U)$. (not normalized)}
+%\begin{figure}[!ht]
+%\centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram3.jpg}}
+%\caption{Discrete example of our counting function $\mu(U)$. (not normalized)}
+%\end{figure}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(s\),
+    ylabel = {\( \rho (s) \)},
+    yticklabels={,,},
+    xticklabels={,,},
+    ymin = 0,
+    xmax = 4,
+]
+\addplot[name path=f,domain=0:6,blue,samples = 50]{-.5*x^4+x+x^3+2*x^2};
+\path[name path=axis] (axis cs:1.5,0) -- (axis cs:12,2);
+
+    \addplot [
+        thick,
+        color=blue,
+        fill=blue, 
+        fill opacity=0.1,
+    ]
+    fill between[
+        of=f and axis,
+        soft clip={domain=1.5:2},
+    ];
+\node [rotate=0] at (axis cs:  1.75,  4) {$\mu(U)$};
+%\node [rotate=45] at (axis cs:  1.75,  9) {$x=1$};
+\draw [decorate, decoration={brace,amplitude=15pt,raise=1pt}] (1.5,6.82) -- (2,9.9) node [midway, anchor = south east, xshift = -1mm, yshift = -1mm, outer sep=10pt,]{U};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{One dimensional continuous example of our counting function $\mu(U)$.}
 \end{figure}
+
 	
 	%\emph{formalize continuous case, improve example}	
 	
@@ -129,10 +171,10 @@
 	
 	 For a physical example let's consider a classical gas distributed in a volume. The state of the whole is the distribution. Now we can see that our counting function will count the amount of gas in a region of this volume by integrating the density over the region in question.
 	
-\begin{figure}[!ht]
-\centerline{\includegraphics[width=\textwidth,angle=-90,scale=.45]{diagram4.jpg}}
-\caption{One dimensional continuous example of our counting function $\mu(U)$.}
-\end{figure}
+%\begin{figure}[!ht]
+%\centerline{\includegraphics[width=\textwidth,angle=-90,scale=.45]{diagram4.jpg}}
+%\caption{One dimensional continuous example of our counting function $\mu(U)$.}
+%\end{figure}
 	
 \begin{defn}
 	Let $\mathcal{C}$ be the state space of a system. The system is \textbf{infinitesimally reducible} to the infinitesimal parts (i.e. particles) identified by the state space $\mathcal{S}$ if there exists a measure $dS$ such that for every state of the whole system $c \in \mathcal{C}$ there exists $\rho : \mathcal{S} \to \mathbb{R}$ such that for every $U \subseteq \mathcal{S}$ the counting function $\mu(U)$ corresponds to the fraction of the system found within those states; as usual this definition means $\mu(S) = 1$.
@@ -183,7 +225,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 \frac{\partial \theta}{\partial x} & \frac{\partial \theta}{\partial y}
 \end{vmatrix}.$$ Evidently these partial derivatives need to be defined to have a well defined transformation of $\rho$. More generally our transformation rule is of the form $$\rho(\xi^a) = \rho(\hat{\xi}^b)\left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right|.$$
 
-	In our example above we do have one point at which the transformation is not well defined: the origin. We do not have well defined partial derivatives at the origin as $\theta$ is not well defined at that point. Thus our density is not well defined at the origin in polar coordinates.
+	In our example above we do have one point at which the transformation is not well defined: the origin. We do not have well defined partial derivatives at the origin as theta is not well defined at that point. Thus our density is not well defined at the origin in polar coordinates.
 	
 	We will require that any state variables labeling our state space be \textit{differentiable} over all of $\mathcal{S}$. This ensures we can define a change of variables without introducing points in $\mathcal{S}$ where our density is not well defined. So our state space will be a manifold labeled by differentiable state variables.
 
@@ -226,7 +268,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 
 \begin{center}
 \renewcommand{\arraystretch}{1.6}
- \begin{tabular}{p{0.1\textwidth} p{0.3\textwidth} p{0.5\textwidth}}
+ \begin{tabular}{p{0.1\textwidth} p{0.25\textwidth} p{0.55\textwidth}}
  \hline
  Symbol & Name & Description \\ [0.5ex] 
  \hline\hline
@@ -234,7 +276,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
  \hline
  $\mathcal{S}$ & State Space of Classical Particles & Contains all possible states of the parts of the system. Particles are distributed according to $\rho(s)$. \\ [2ex]
  \hline
- $\mathcal{M}$ & Space-Time & Physical space. In our case three-dimensional without temporal axis. \\ [1ex] 
+ $\mathcal{M}$ & Space-Time & Physical space. In our case three-dimensional without temporal axis. \\ [2ex] 
  \hline
  $\rho(s)$ & Distribution of States & $\mathcal{S} \to \mathbb{R}$ \\
  \hline
