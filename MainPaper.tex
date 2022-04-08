@@ -88,7 +88,7 @@
 \begin{tikzpicture}
 \begin{axis}[
     axis lines = left,
-    xlabel = \(x\),
+    xlabel = \(s\),
     ylabel = {\( \rho (s) \)},
     ymin = 0,
 ]
@@ -99,7 +99,7 @@
     color=red,
 ]
 {-1*x^6+12*x^5-55*x^4+120*x^3-124*x^2+48*x+2};
-\addlegendentry{\( \rho (c_1) \)}
+\addlegendentry{\( \rho_{c_1} (s) \)}
 
 \addplot [
     domain=0:3.4, 
@@ -107,7 +107,7 @@
     color=blue,
 ]
 {-.5*x^4+x+x^3+2*x^2};
-\addlegendentry{\( \rho (c_2) \)}
+\addlegendentry{\( \rho_{c_2} (s) \)}
 
 
 \end{axis}
