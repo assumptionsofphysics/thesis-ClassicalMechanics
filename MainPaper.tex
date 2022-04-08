@@ -66,17 +66,17 @@
 
 	%\emph{motivate the uniqueness of the distribution}	
 	
-	Each state of the whole system is uniquely determined by the states of its parts, meaning that given the state of all parts, we can determine exactly the state of the whole system. Two identical systems are in the same state if and only if all of their parts are in the same states. The same is true the other way around. The states of the parts of the system are uniquely determined by the state of the whole. Thus we have an invertible map between the state of our whole system and the states of its parts. In our example, this means that there is exactly one path traveled by the red dot per distinct state of the whole ball. So if we throw the ball with no angular velocity, the red dot will travel a parabola through the air. We could then throw the ball with the same linear velocity so that its center of mass travels the same path as before, but if the ball is spinning we have a different path traveled by the red dot. So from two distinct states of the overall system, one with angular velocity one without, we find two distinct sets of states of the parts of the system. One spiraling trajectory and one parabola.
+	Each state of the whole system is uniquely determined by the states of its parts, meaning that given the state of all parts, we can determine exactly the state of the whole system. Two identical systems are in the same state if and only if all of their parts are in the same states. The same is true the other way around. The states of the parts of the system are uniquely determined by the state of the whole. Thus we have an invertible, bijective map between the state of our whole system and the states of its parts. In our example, this means that there is exactly one path traveled by the red dot per distinct state of the whole ball. So if we throw the ball with no angular velocity, the red dot will travel a parabola through the air. We could then throw the ball with the same linear velocity so that its center of mass travels the same path as before, but if the ball is spinning we have a different path traveled by the red dot. So from two distinct states of the overall system, one with angular velocity one without, we find two distinct sets of states of the parts of the system. One spiraling trajectory and one parabola.
 		
 	 %If we consider a ball of irreducible material i.e. an electron, we cannot describe the state of a dot drawn on its surface. We could not say for instance that a photon scattering with that electron interacts specifically with the part of the electron with the dot. That is because the electron is not reducible; we cannot describe the state of the electron by breaking it into smaller parts and describing those parts. We cannot describe a process in which something interacts with only part of the electron. 
 	 
 	 %\emph{Describe what the process of subdivision is, and define the particle as the limit of that process}
 	 
-	 We have described reducibility in general, but what does it mean to be infinitesimally reducible? If a system is infinitesimally reducible we can subdivide it as many times as we want and the smallest subdivisions will still be themselves reducible. If we imagine that we divide our system until we approach the limit of recursive subdivision we will arrive at a collection of infinitesimally small parts of the system; we call these smallest subdivisions classical particles. What does this mean physically? Continuing our previous example, imagine we cover the surface of the ball in red dots. We then remove these dots and replace each of them with a number of smaller dots. We repeat this process until the radius of the dots is approaching zero. Because the ball is a reducible system, given the state of the whole ball, we know the states of all of the red dots drawn on it. It is important to note that the dots do not ever become points. They are always have radii that are greater than zero. No dot is a point particle, rather they are infinitesimally small subdivisions. We can always divide them again.
+	 We have described reducibility in general, but what does it mean to be infinitesimally reducible? If a system is infinitesimally reducible we can subdivide it as many times as we want and the smallest subdivisions will still be themselves reducible. If we imagine that we divide our system until we approach the limit of this subdivision we will arrive at a collection of infinitesimally small parts of the system; we call these smallest subdivisions classical particles.
 	 
-	 The limit of these subdivisions are our classical particles. Assuming a system to be infinitesimally reducible means that given the state of the whole system, we can describe the states of all the infinitesimally small parts of the system. Now we must codify this idea formally.
+	 What does this mean physically? Continuing our previous example, imagine we cover the surface of the ball in red dots. We then remove these dots and replace each of them with a number of smaller dots. We repeat this process until the radius of the dots is approaching zero. Because the ball is a reducible system, given the state of the whole ball, we know the states of all of the red dots drawn on it. It is important to note that the dots do not ever become points. They are always have radii that are greater than zero. No dot is a point particle, rather they are infinitesimally small subdivisions. \underline{We can always divide them again}. Assuming a system to be infinitesimally reducible means that given the state of the whole system, we can describe the states of all the infinitesimally small parts of the system. Now we must codify this idea formally.
 	 	
-	Let's start with a discrete system as it is conceptually simpler Consider a box with a fixed number of balls of varying colors as our whole system.\footnote{this is not an example of an infinitesimally reducible system as the balls are the limit of its reducibility, but it serves as an illustrative example.} Suppose the state of the whole system will be defined by the number of balls of each color. We can formally define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
+	Let's start with a discrete system as it is conceptually simpler. Consider a box with a fixed number of balls of varying colors as our system.\footnote{This is not an example of an infinitesimally reducible system as the balls are the limit of its reducibility, but it serves as an illustrative example.} Suppose the state of the whole system is determined by the number of balls of each color. We will define the \textit{state space} of the balls as $\mathcal{S}$ which spans all possible colors a ball can be. Each ball is at a point $s \in \mathcal{S}$ corresponding to its color. We call the state space of our whole system $\mathcal{C}$ which spans all possible color combinations of the balls. One state of the whole system is a point $c \in \mathcal{C}$. For a state $c \in \mathcal{C}$ we can define the number of balls in the box of each color as a \textit{distribution}, $\rho$, over the state space $\mathcal{S}$ of the balls. This distribution is unique to each state of the whole system. Two identical systems are in the same state if and only if their distributions are equivalent. For each distinct state $c \in \mathcal{C}$ of the whole system, we have exactly one $\rho$. 
 
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram2.jpg}}
@@ -90,10 +90,11 @@
     axis lines = left,
     xlabel = \(x\),
     ylabel = {\( \rho (s) \)},
+    ymin = 0,
 ]
 %Below the red parabola is defined
 \addplot [
-    domain=0:4.07, 
+    domain=0:4.25,
     samples=100, 
     color=red,
 ]
@@ -115,7 +116,7 @@
 \caption{Two different states of the system map to two different distributions of the parts of the system over $\mathcal{S}$.}
 \end{figure}
 	
-	For each subset of colors in $\mathcal{S}$, we can count the number balls that are those colors; call this counting function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $\mu(U) = \sum_{s \in U} \rho(s)$. We will normalize this counting function by defining $\mu(S) = 1$.
+	For each subset $U$ of $\mathcal{S}$, we can count the number balls that are those colors; call this counting function $\mu : \mathcal{S} \to \mathbb{R}$. That is, for each $U \subset \mathcal{S}$ we have $$\mu(U) = \frac{\sum_{s \in U} \rho(s)}{\sum_{s \in \mathcal{S} \rho(s)}}.$$ This functions is normalized by definition because $\mu(S) = 1$.
 	
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.35]{diagram3.jpg}}
@@ -124,14 +125,15 @@
 	
 	%\emph{formalize continuous case, improve example}	
 	
-	If our system is continuous the main ideas above hold, but we must make two changes to the formalization. First, our distribution $\rho : \mathcal{S} \to \mathbb{R}$ becomes a density of states over the space and second, for $\mu$ instead of a sum we use an integral: $\mu(U) = \int_{U} \rho(s) d\mathcal{S}$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. For a physical example let's consider a classical gas distributed in a volume. The state of the whole is the distribution. Now we can see that our counting function will count the amount of gas in a region of this volume.
+	If our system is continuous the main ideas above hold, but we must make two changes to the formalization. First, our distribution $\rho : \mathcal{S} \to \mathbb{R}$ becomes a density of states over the space and second, $\mu$ becomes an integral: $$\mu(U) = \frac{\int_{U} \rho(s) d\mathcal{S}}{\int_{\mathcal{S}} \rho(s) d\mathcal{S}}$$ where $d\mathcal{S}$ gives the number of states in an infinitesimal area. For a physical example let's consider a classical gas distributed in a volume. The state of the whole is the distribution. Now we can see that our counting function will count the amount of gas in a region of this volume by integrating the density over the region in question.
+	
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=-90,scale=.45]{diagram4.jpg}}
 \caption{One dimensional continuous example of our counting function $\mu(U)$.}
 \end{figure}
 	
 \begin{defn}
-	Let $\mathcal{C}$ be the state space of a system. The system is \textbf{infinitesimally reducible} to the infinitesimal parts (i.e. particles) identified by the state space $\mathcal{S}$ if there exists a measure $dS$ such that for every $c \in \mathcal{C}$ we can find a $\rho : \mathcal{S} \to \mathbb{R}$ such that for every $U \subseteq \mathcal{S}$ the integral $\mu(U) = \int_U \rho(s) dS$ corresponds to the fraction of the system whose parts occupy those states, which means $\mu(S) = 1$.
+	Let $\mathcal{C}$ be the state space of a system. The system is \textbf{infinitesimally reducible} to the infinitesimal parts (i.e. particles) identified by the state space $\mathcal{S}$ if there exists a measure $dS$ such that for every state of the whole system $c \in \mathcal{C}$ there exists $\rho : \mathcal{S} \to \mathbb{R}$ such that for every $U \subseteq \mathcal{S}$ the counting function $\mu(U)$ corresponds to the fraction of the system found within those states; as usual this definition means $\mu(S) = 1$.
 \end{defn}	
 	
 \subsection{Constraint on Coordinate Transformations}	
@@ -225,9 +227,7 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
  \hline
  $\rho(\xi^a)$ & Density of States & $\mathbb{R}^n \to \mathbb{R}$ \\
  \hline
- $\mu(U)$ & Counting function & $\mathbb{P}(\mathcal{S}) \to \begin{cases}
- \mathbb{Z} & \text{if \textrm{discrete}}\\
- \mathbb{R} & \textrm{if continuous} \end{cases}$ \\ [2.3ex]
+ $\mu(U)$ & Counting function & $\mathbb{P}(\mathcal{S}) \to \mathbb{R}$ \\
  \hline
  $\xi^a$ & State variables & $\mathcal{S} \to \mathbb{R}^n$ \\
  \hline
