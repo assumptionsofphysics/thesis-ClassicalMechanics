@@ -21,7 +21,7 @@
 
 \section{Introduction}
 
-	The purpose of this work is to re-derive Hamiltonian mechanics from base assumptions about a system. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian and Lagrangian mechanics lack this physicality. They are taught as mathematical reformulations of Newtonian Mechanics which they are not. Many popular mechanics textbooks contain passages like this from Thorton and Marion's \textit{Classical Mechanics of Particles and Systems}: "... we need not formulate a \textit{new} theory of mechanics--the Newtonian theory is quite correct--but only devise an alternate method of dealing with complicated problems\cite{thornton_marion_2014}." This assumption of an equivalence between Newtonian and Hamiltonian mechanics is a misconception. In fact, the relationship between our three favorite classical theories is best described by figure one.
+	The purpose of this work is to re-derive Hamiltonian mechanics from base assumptions. Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As they are treated now, Hamiltonian Mechanics lacks this physicality. It is taught as mathematical reformulations of Newtonian Mechanics which it is not. Many popular mechanics textbooks contain passages like this from Thorton and Marion's \textit{Classical Mechanics of Particles and Systems}: "... we need not formulate a \textit{new} theory of mechanics--the Newtonian theory is quite correct--but only devise an alternate method of dealing with complicated problems\cite{thornton_marion_2014}." This assumption of an equivalence between Newtonian and Hamiltonian mechanics is a misconception. In fact, the relationship between our three favorite classical theories is best described by Figure one.
 	
 	 This work will begin with basic physical assumptions about a system in order to show it obeys Hamiltonian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results. 	
 	 
@@ -423,6 +423,7 @@ We have now successfully described the structure of phase space by making one as
 	
 \section{Deterministic and Reversible Evolution}
 
+\iffalse
 \begin{itemize}
 	\item Describe what deterministic and reversible mean. Bijection from past states to future states. Not enough.
 	
@@ -439,7 +440,7 @@ We have now successfully described the structure of phase space by making one as
 	\item prop with equations
 	
 \end{itemize}
-
+\fi
 
 \begin{assump}[Deterministic and Reversible Evolution]
 	The system undergoes deterministic and reversible evolution meaning given the state of the system at any time, its state at all past and future times is known.
@@ -453,7 +454,7 @@ We have now successfully described the structure of phase space by making one as
 	
 	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one map from past states to future states. But we also know that no matter the initial state, as the system evolves it will approach its rest state because it the oscillator is damped. Our state variables will be position and momentum. We know that in the real world all measurements have finite precision. This informational granularity tells us that at some point in the above example we will not be able to tell the difference between the state in which the oscillator  is barely moving and its rest state; a measurement will tell us that they are the same. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. This means in reality our system is not reversible because once it passes a certain point we cannot deduce the past state of the system from its current state; when the system is at rest we have no idea of its initial condition. Thus the addition of the requirement that density be conserved over time is necessary to ensure we can always deduce the past states of the system from its current state.
 	
-	Remember, this conservation does not mean that the system cannot change states; it means only that if a certain number of classical particles begin in one state, that exact number of particles will end together in the same state even if said final state is different from the original. For if half of the system begins in state A 
+	Remember, this conservation does not mean that the system cannot change states; it means only that if a certain number of classical particles begin in one state, that exact number of particles will end together in the same state. For example, if half of the system begins in state A and one of these particles is later found in state B then we know that exactly half of the system is found in state B at that time. 
 	
 \begin{figure}[!ht]
 \centerline{\includegraphics[width=\textwidth,angle=90,scale=.6]{streamfunctiondiagram.jpg}}
@@ -464,11 +465,11 @@ We have now successfully described the structure of phase space by making one as
 	A deterministic and reversible system is one for which all particles in a state are mapped to one and only one past or future state. That is, given a set of initial values $\xi^a_0$ at a time $t_0$, there is only one possible evolution $\xi^a(t)$ such that $\xi^a(t_0) = \xi^a_0$. Moreover, $\rho(\xi^a(t), t)$ is a constant.
 \end{defn}
 
-	We will continue to consider a system with a single degree of freedom and state variables $\{q,p \}$. If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of the state of each particle can be written as $\xi^a(t)$ and the fraction of the system that is found in that state is $\rho(\xi^a(t), t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. We then will write a 2D vector field $S^a =\frac{d\xi^a}{dt} = \{\frac{dq}{dt},\frac{dp}{dt} \}$.
+	We will continue to consider a system with a single degree of freedom and state variables $\{q,p \}$. If we transport our 2D state space in time $t$, we can map the evolution of each classical particle in $\mathbb{R}^3$. The evolution of the state of each particle can be written as $\xi^a(t)$ and the fraction of the system that is found in that state is $\rho(\xi^a(t), t)$. If we change infinitesimally in time we can write $\xi^a(t + dt) = \xi^a + \frac{d\xi^a}{dt}dt$. We know that $\xi^a(t)$ is differentiable because $\rho$ is always defined. We then will write a vector field $S =\frac{d\xi^a}{dt} \implies S = (\frac{dq}{dt},\frac{dp}{dt},\frac{dt}{dt} )$.
 	
-	In our damped oscillator example this vector field will have a nonzero divergence i.e. $\mathbf{\nabla} \cdot S^a =\mathbf{\nabla} \cdot \frac{d\xi^a}{dt} \neq 0$ because the states of the particles get closer together as the system tends towards its rest state as illustrated in the diagram above. With the requirement that $\rho(\xi,t)$ be conserved in time, we know that the divergence of this vector field is must be zero $$\mathbf{\nabla} \cdot S^a = \frac{\partial S^q}{\partial q} + \frac{\partial S^p}{\partial p} = 0$$. This means that we can write our vector field $S^a$ as the curl of a stream function by Helmholtz's theorem: $$S^a = -\mathbf{\nabla} \times \theta$$ where $\theta$ is our vector potential. Plugging this in we get: Finally we arrive at a familiar looking set of equations: $$d_t q = \partial _{p} H$$ $$d_t p = -\partial _q H.$$ These are the typical equations used in Hamiltonian mechanics for a system with two state variables.
+	Thinking about our damped oscillator example, we see that the vector field $S$ will have a nonzero divergence because the states of the classical particles get closer together as the system evolves towards its rest state as illustrated in Figure [PLACEHOLDER]. Applying the requirement that $\rho(\xi^a(t),t)$ be conserved in time, we see that the divergence of this vector field is must be zero $$\mathbf{\nabla} \cdot S = \frac{\partial S^q}{\partial q} + \frac{\partial S^p}{\partial p} + \frac{\partial S^t}{\partial t} = 0.$$ Note he This means that we can write our vector field $S$ as the curl of a vector potential by the fundamental theorem: $$S = -\mathbf{\nabla} \times (\theta + \nabla(f(q,p,t)))$$ where $\theta$ is our vector potential and $\nabla(f(q,p,t))$ is a gauge term.\footnote{Remember the curl of the gradient of a scalar field is always zero.} We know that $\theta$  will not be unique and so we can choose what gauge we work in. We will write theta as $\theta = (\theta_q, \theta_p, \theta_t)$ and choose our gauge such that $\frac{\partial f}{\partial p} = -\theta_p$ and $\frac{\partial f}{\partial q}, \frac{\partial f}{\partial t} = 0$. Thus we have $$\theta + \nabla(f(q,p,t)) = (\theta_q, 0, \theta_t).$$ For simplicity's sake we will drop the gradient term to get $$\theta = (\theta_q, 0, \theta_t).$$ Plugging this back into $S =\frac{d\xi^a}{dt} \implies S = (\frac{dq}{dt},\frac{dp}{dt},\frac{dt}{dt} = 1 )$ we arrive at the system of equations $$d_t q = \partial _{p} H$$ $$d_t p = -\partial _q H$$ $$ 1 = 1.$$ This is the standard form of Hamilton's equations for a single degree of freedom.
 	
-	Let's generalize this to a system with n degrees of freedom. Recall that each infinitesimal surface in phase space is mapped to a surface of the same area; this means that the number of possible states remains the same and that independent degrees of freedom remain independent and thus their surfaces remain orthogonal. We can break down a higher dimensional system into its d.o.f.s in order to arrive at our final equation: $$d_tq^i = \partial_{p_i}H$$ $$d_tp_i = -\partial_{q^i}H.$$ This is the generalized form of Hamilton's equations. A system that evolves according to these equations is a Hamiltonian system.
+	Generalizing this to a system with n degrees of freedom we recall that each infinitesimal surface in phase space is mapped to a surface of the same area; this means that the number possible states remains the same and that independent degrees of freedom remain independent and thus their surfaces remain orthogonal. We can break down a higher dimensional system into its d.o.f.s in order to arrive at our final equations: $$d_tq^i = \partial_{p_i}H$$ $$d_tp_i = -\partial_{q^i}H.$$ This is the generalized form of Hamilton's equations. A system that evolves according to these equations is a Hamiltonian system.
 
 \begin{prop}
 	The deterministic and reversible evolution of an infinitesimally reducible system follows Hamilton's equations. So the evolution of the system can be written in the familiar way:
@@ -558,11 +559,7 @@ Time evolution of entropy. It is conserved only under Hamiltonian evolution. If 
 
 \section{Conclusion}
 	
-\begin{itemize}
-
-	\item start with assumptions discuss results
-
-\end{itemize}
+	We have now successfully derived all of Hamiltonian Mechanics from two basic assumptions about a system. By assuming that our system is Infinitesimally Reducible we derived the structure of phase space. With the assumption that the system undergoes Deterministic and Reversible Evolution we found a set of equations that describe the dynamics of the system.
 
 
 \bibliographystyle{plain}
