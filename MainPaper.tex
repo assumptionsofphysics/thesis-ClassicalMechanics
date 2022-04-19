@@ -12,16 +12,18 @@
 
 
 
+
+
 \title{From Two Assumptions to Hamilton's Mechanics}
 \author{Ryan Cosper}
 	
 \begin{document}
 
-\maketitle
+%\maketitle
 
 \section{Introduction}
 
-	The main purpose of this work is to re-derive Hamiltonian mechanics from base assumptions at an approachable level. Through this derivation it also seeks to eliminate the misconceptions that plague current literature and motivate a more thoughtful understanding of the subject.
+	The main purpose of this work is to re-derive Hamiltonian mechanics from base assumptions at an approachable level. Through this derivation it also seeks to eliminate the misconceptions that plague current instructional literature and motivate a more thoughtful understanding of the subject.
 	
 	 Historically the basis for the laws of physics were generalized experiences. These laws were rooted in the physical world rather than a mathematical one. As it is treated now, Hamiltonian Mechanics lacks this physicality. It is taught as mathematical reformulation of Newtonian Mechanics rather than its own physical theory. Many popular mechanics textbooks contain passages like this from Thorton and Marion's \textit{Classical Mechanics of Particles and Systems}: "... we need not formulate a \textit{new} theory of mechanics--the Newtonian theory is quite correct--but only devise an alternate method of dealing with complicated problems.\cite{thornton_marion_2014}" This assumption of an equivalence between Newtonian and Hamiltonian mechanics is a misconception.
 	
@@ -59,7 +61,7 @@
 \caption{Venn diagram showing the relationship between our three favorite classical theories.}
 \end{figure}
 
- Now that we have motivated our approach, we will begin the derivation with basic physical assumptions about a system in order to show it obeys Hamiltonian Mechanics with a more physical justification. We will start with physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results.
+ Now that we have motivated our approach, we will begin the derivation with basic physical assumptions about a system in order to show it obeys Hamiltonian Mechanics with a more physical justification. We will start with these physical assumptions, then translate those assumptions into precise mathematical definitions. This will lead us to our results.
 
 \section{Infinitesimal Reducibility}
 	
@@ -351,10 +353,55 @@ Thus we have the following identities: $\rho(s(\xi^a)) = \rho(\xi^a)$; $\rho(s) 
 	 
 	 %So we will ourselves change only the unit variables; the other state variables must change in accordance with the new definitions of units such that the units of density do not change.
 	
-\begin{figure}[!ht]
-\centerline{\includegraphics[width=\textwidth,angle=90,scale=.45]{diagram5.jpg}}
-\caption{Visualization of the how the units with which we label our space affect the density. The important thing to note here is that while physically one meter and a hundred centimeters are the same, our mathematical system does not show this. This is where we as physicists must understand the differences between a physical system and a mathematical one.}
+%\begin{figure}[!ht]
+%\centerline{\includegraphics[width=\textwidth,angle=90,scale=.45]{diagram5.jpg}}
+%
+%\end{figure}
+
+\begin{center}
+\begin{figure}[h!]
+%\begin{minipage}{.2\textwidth}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+    axis lines = left,
+    xlabel = \( cm \),
+    ylabel = {\( cm \)},
+    ymin = 0,
+    ymax = 110,
+    xmin = 0,
+    xmax = 110,
+]
+\draw[line width=2pt] (50,50) -- (100,50);
+\draw[line width=2pt] (100,50) -- (100,100);
+\draw[line width=2pt] (100,100) -- (50,100);
+\draw[line width=2pt] (50,100) -- (50,50);
+\node [rotate=0] at (axis cs:  75,  75) {\Large $.0001\frac{kg}{cm^2}$};
+\end{axis}
+\end{tikzpicture}
+%\end{minipage}
+%\begin{minipage}{.2\textwidth}
+\hspace{1cm}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+    axis lines = left,
+    xlabel = \( m \),
+    ylabel = {\( m \)},
+    xmin = 0,
+    xmax = 1.1,
+    ymin = 0,
+    ymax = 1.1,
+]
+\draw[line width=2pt] (.5,.5) -- (1,.5);
+\draw[line width=2pt] (1,.5) -- (1,1);
+\draw[line width=2pt] (1,1) -- (.5,1);
+\draw[line width=2pt] (.5,1) -- (.5,.5);
+\node [rotate=0] at (axis cs:  .75,  .75) {\Large $1\frac{kg}{m^2}$};
+\end{axis}
+\end{tikzpicture}
+%\end{minipage}
+\caption{Visualization of the how the units with which we label our space affect the density. Both areas contain exactly $.25kg$ distributed uniformly, but their density functions are different because their unit systems are different.}
 \end{figure}
+\end{center}
 
 	Now we will examine formally this change of units. Let's start with the simplest case: one unit variable suffices to describe our unit system. We then can write our set of state variables as $\xi^a = \{q,k^\mu\}$ where $k^\mu$ could represent any number of other state variables. Let's suppose we perform an arbitrary change of units. We then have $\hat{q} = \hat{q}(q)$. How must our set $\{k^\mu\}$ change while upholding our restriction to a unitary Jacobian? Our Jacobian block matrix will be of the form $$1 = \left|\frac{\partial\hat{\xi}^b}{\partial\xi^a}\right| = \begin{vmatrix}
 \frac{\partial \hat{q}}{\partial q} & \frac{\partial \hat{q}}{\partial k^\mu} \\
@@ -467,9 +514,38 @@ We have now successfully described the structure of phase space by making one as
 	
 	Imagine we have a one dimensional damped harmonic oscillator. We have a one to one map from past states to future states. But we also know that no matter the initial state, as the system evolves it will approach its rest state because it the oscillator is damped. Our state variables will be position and momentum. We know that in the real world all measurements have finite precision. This informational granularity tells us that at some point in the above example we will not be able to tell the difference between the state in which the oscillator  is barely moving and its rest state; a measurement will not be able to distinguish between the two states. Thinking of this in terms of our knowledge of the system we see that as time progress and our states collapse towards the rest state, we lose information about the system. This means in reality our system is not reversible because once it passes a certain point we cannot deduce the past state of the system from its current state; when the system is at rest we have no idea of its initial condition. Thus the addition of the requirement that density be conserved over time is necessary to ensure we can always deduce the past states of the system from its current state in a physically meaningful way.
 	
-\begin{figure}[!ht]
-\centerline{\includegraphics[width=\textwidth,angle=90,scale=.6]{streamfunctiondiagram.jpg}}
-\caption{Bijection versus conservation of density illustrated by a retrodictable deterministic and reversible system that breaks down with informational granularity.}
+%\begin{figure}[!ht]
+%\centerline{\includegraphics[width=\textwidth,angle=90,scale=.6]{streamfunctiondiagram.jpg}}
+%
+%\end{figure}
+\pgfplotsset{ticks=none}
+\begin{figure}
+\begin{tikzpicture}[scale = 1.7]
+\tikzset{shift={(current page.center)},xshift=3cm}
+   \begin{axis}[view={140}{30},
+                axis lines=center,
+                xlabel=$q$,ylabel=$t$,zlabel=$p$,
+                no marks,
+                xticklabels={,,},yticklabels={,,}]
+     \addplot3+[line width=.5pt,no markers,samples=70,color=blue,  samples y=0,domain=0:5*pi,variable=\t]
+                                      ({exp(-.5*\t)*cos(\t r)},.5*\t,{exp(-.5*\t)*sin(\t r)});
+	\addplot3+[line width=.5pt,no markers,samples=70,color=green, samples y=0,domain=0:5*pi,variable=\t]
+                                      (-{exp(-.5*\t)*cos(\t r)},.5*\t,-{exp(-.5*\t)*sin(\t r)});
+	\addplot3+[line width=.5pt,no markers,samples=70,color=cyan, samples y=0,domain=0:5*pi,variable=\t]
+                                      ({-exp(-.5*\t)*sin(\t r)},.5*\t,{exp(-.5*\t)*cos(\t r)});
+\addplot3+[line width=.5pt,no markers,samples=70,color=teal, samples y=0,domain=0:5*pi,variable=\t]
+                                      ({exp(-.5*\t)*sin(\t r)},.5*\t,-{exp(-.5*\t)*cos(\t r)});
+	\addplot3+[line width=.5pt,no markers,samples=70,color=blue,  samples y=0,domain=0:5*pi,variable=\t]
+                                      ({.5*exp(-.5*\t)*cos(\t r)},.5*\t,{.5*exp(-.5*\t)*sin(\t r)});
+	\addplot3+[line width=.5pt,no markers,samples=70,color=green, samples y=0,domain=0:5*pi,variable=\t]
+                                      (-{.5*exp(-.5*\t)*cos(\t r)},.5*\t,-{.5*exp(-.5*\t)*sin(\t r)});
+	\addplot3+[line width=.5pt,no markers,samples=70,color=cyan, samples y=0,domain=0:5*pi,variable=\t]
+                                      ({-.5*exp(-.5*\t)*sin(\t r)},.5*\t,{.5*exp(-.5*\t)*cos(\t r)});
+\addplot3+[line width=.5pt,no markers,samples=70,color=teal, samples y=0,domain=0:5*pi,variable=\t]
+                                      ({.5*exp(-.5*\t)*sin(\t r)},.5*\t,-{.5*exp(-.5*\t)*cos(\t r)});
+  \end{axis}
+\end{tikzpicture}
+\caption{The evolution of a damped harmonic oscillator in phase space. Evidently this vector field is not divergenceless. At some point }
 \end{figure}
 
 \begin{defn}
@@ -573,6 +649,10 @@ Time evolution of entropy. It is conserved only under Hamiltonian evolution. If 
 \section{Conclusion}
 	
 	We have now successfully derived all of Hamiltonian Mechanics from two basic assumptions about a system. By assuming that our system is Infinitesimally Reducible we derived the structure of phase space. With the assumption that the system undergoes Deterministic and Reversible Evolution we found a set of equations that describe the dynamics of the system. This result 
+	
+\section{Acknowledgments}
+
+	I would like to thank Gabriele Carcassi for his guidance and seemingly endless patience; Christine Aidala for her 
 
 
 \bibliographystyle{plain}
