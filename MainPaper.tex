@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{article}[a4paper]
 \usepackage{assumptionsofphysics}
 \usepackage{graphicx}
 \graphicspath{{images/}}
@@ -18,7 +18,52 @@
 %\title{From Two Assumptions to Hamilton's Mechanics}
 %\author{Ryan Cosper}
 	
+
+\usepackage[margin = 1in]{geometry} %1 in Margins
+\usepackage{graphicx}
+\newcommand{\doublespace} {
+  \renewcommand{\baselinestretch}{1.66}\small\normalsize
+}
+\newcommand{\exactdoublespace} {
+  \renewcommand{\baselinestretch}{1.8}\small\normalsize
+}
+\newcommand{\oneandhalfspace} {
+  \renewcommand{\baselinestretch}{1.24}\small\normalsize
+}
+\newcommand{\singlespace} {
+  \renewcommand{\baselinestretch}{0.9}\small\normalsize
+}
+
+\newlength{\fiveblanklines}\setlength{\fiveblanklines}{0.7 in}
+\newlength{\tenblanklines}\setlength{\tenblanklines}{1.5 in}
+\singlespace
+
 \begin{document}
+\thispagestyle{empty}
+\exactdoublespace
+  \begin{center}
+    \begin{LARGE} From two Assumptions to Hamilton's Mechanics\end{LARGE}\\
+    by\\
+    Ryan Cosper
+  \end{center}
+  \singlespace
+
+  \vspace{\fiveblanklines}
+  \begin{center}
+    \singlespace
+    % If you are using this for prospectus, simply add prospectus after   \@paperType
+A Thesis Presented in Partial Fulfillment\\
+of the Requirements for the Degree\\
+Bachelor of Science in Honors Physics
+  \end{center}
+  \vspace{\tenblanklines}
+   \vfill
+   \begin{center}
+   \doublespace
+   University of Michigan, Ann Arbor\\
+   April 2022
+   \end{center}
+\newpage
 
 
 \tableofcontents
@@ -670,7 +715,7 @@ Time evolution of entropy. It is conserved only under Hamiltonian evolution. If 
 
 \section{Conclusion}
 	
-	We have now successfully derived all of Hamiltonian Mechanics from two basic assumptions about a system. By assuming that our system is Infinitesimally Reducible we derived the structure of phase space. With the assumption that the system undergoes Deterministic and Reversible Evolution we found a set of equations that describe the dynamics of the system. This result 
+	We have now successfully derived all of Hamiltonian Mechanics from two basic assumptions about a system. By assuming that our system is Infinitesimally Reducible we derived the structure of phase space. With the assumption that the system undergoes Deterministic and Reversible Evolution we found a set of equations that describe the dynamics of the system. This result  while seemingly miraculous, is simply a product of creating a one-to-one mapping of physical principles to mathematical structures. This precise way of understanding the physical world 
 	
 
 
