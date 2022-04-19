@@ -65,19 +65,21 @@ Bachelor of Science in Honors Physics
    \end{center}
 \newpage
 
-
-\tableofcontents
-\newpage
-
 \begin{abstract}
 
 	This work is a re-derivation of Hamiltonian Mechanics from two assumptions about a classical system. Through this derivation we work to better understand the nature of classical systems and eliminate some of the misconceptions surrounding the relationship between classical theories.
 
 \end{abstract}
 
-\section{Acknowledgments}
+\section*{Acknowledgments}
 
 	I would like to thank Gabriele Carcassi for his guidance and seemingly endless patience and Christine Aidala for her support and encouragement. This work is a part of the larger Assumptions of Physics project at the University of Michigan. This work was funded in part by the University of Michigan Department of Physics.
+
+\newpage
+\tableofcontents
+\newpage
+
+
 
 \section{Introduction}
 
@@ -578,9 +580,10 @@ We have now successfully described the structure of phase space by making one as
 %\end{figure}
 \pgfplotsset{ticks=none}
 \begin{figure}
+\hspace*{.22\linewidth}
 \begin{tikzpicture}[scale = 1.7]
 \tikzset{shift={(current page.center)},xshift=3cm}
-   \begin{axis}[view={140}{30},
+   \begin{axis}[view={120}{30},
                 axis lines=center,
                 xlabel=$q$,ylabel=$t$,zlabel=$p$,
                 xmin = -1,
@@ -591,19 +594,19 @@ We have now successfully described the structure of phase space by making one as
                 xticklabels={,,},yticklabels={,,}]
      \addplot3+[line width=.5pt,no markers,samples=70,color=blue,  samples y=0,domain=0:5*pi,variable=\t]
                                       ({exp(-.5*\t)*cos(\t r)},.5*\t,{exp(-.5*\t)*sin(\t r)});
-	\addplot3+[line width=.5pt,no markers,samples=70,color=green, samples y=0,domain=0:5*pi,variable=\t]
+	\addplot3+[line width=.5pt,no markers,samples=70,color=violet, samples y=0,domain=0:5*pi,variable=\t]
                                       (-{exp(-.5*\t)*cos(\t r)},.5*\t,-{exp(-.5*\t)*sin(\t r)});
 	\addplot3+[line width=.5pt,no markers,samples=70,color=cyan, samples y=0,domain=0:5*pi,variable=\t]
                                       ({-exp(-.5*\t)*sin(\t r)},.5*\t,{exp(-.5*\t)*cos(\t r)});
-\addplot3+[line width=.5pt,no markers,samples=70,color=teal, samples y=0,domain=0:5*pi,variable=\t]
+\addplot3+[line width=.5pt,no markers,samples=70,color=magenta, samples y=0,domain=0:5*pi,variable=\t]
                                       ({exp(-.5*\t)*sin(\t r)},.5*\t,-{exp(-.5*\t)*cos(\t r)});
 	\addplot3+[line width=.5pt,no markers,samples=70,color=blue,  samples y=0,domain=0:5*pi,variable=\t]
                                       ({.5*exp(-.5*\t)*cos(\t r)},.5*\t,{.5*exp(-.5*\t)*sin(\t r)});
-	\addplot3+[line width=.5pt,no markers,samples=70,color=green, samples y=0,domain=0:5*pi,variable=\t]
+	\addplot3+[line width=.5pt,no markers,samples=70,color=violet, samples y=0,domain=0:5*pi,variable=\t]
                                       (-{.5*exp(-.5*\t)*cos(\t r)},.5*\t,-{.5*exp(-.5*\t)*sin(\t r)});
 	\addplot3+[line width=.5pt,no markers,samples=70,color=cyan, samples y=0,domain=0:5*pi,variable=\t]
                                       ({-.5*exp(-.5*\t)*sin(\t r)},.5*\t,{.5*exp(-.5*\t)*cos(\t r)});
-\addplot3+[line width=.5pt,no markers,samples=70,color=teal, samples y=0,domain=0:5*pi,variable=\t]
+\addplot3+[line width=.5pt,no markers,samples=70,color=magenta, samples y=0,domain=0:5*pi,variable=\t]
                                       ({.5*exp(-.5*\t)*sin(\t r)},.5*\t,-{.5*exp(-.5*\t)*cos(\t r)});
                                       
 \node [rotate=0] at (axis cs:  0,6,.28) {\Large $t_c$};
@@ -623,7 +626,7 @@ We have now successfully described the structure of phase space by making one as
 	
 	 If we change infinitesimally in time we can write $\xi^\alpha(t + dt) = \xi^\alpha + \frac{d\xi^\alpha}{dt}dt$. We know that $\xi^\alpha(t)$ is differentiable because $\rho$ is always defined. We then will write a vector field $S^\alpha =\frac{d\xi^\alpha}{dt} \implies S = (\frac{dq}{dt},\frac{dp}{dt},\frac{dt}{dt} )$. This vector field describes the time evolution of our state variables.
 	
-	Thinking about our damped oscillator example, we see that the vector field $S$ will have a nonzero divergence because the states of the classical particles get closer together as the system evolves towards its rest state as illustrated in Figure [PLACEHOLDER]. Applying the requirement that $\rho(\xi^\alpha(t))$ be conserved in time, we see that the divergence of this vector field is must be zero $$\mathbf{\nabla} \cdot S = \partial_\alpha S^\alpha = \frac{\partial S^q}{\partial q} + \frac{\partial S^p}{\partial p} + \frac{\partial S^t}{\partial t} = 0.$$ Note that this means that we can write our vector field $S$ as the curl of a vector potential by the fundamental theorem: $$S = \mathbf{\nabla} \times (-\theta + \mathbf{\nabla} f)$$ where $\theta$ is our vector potential and $\nabla f(q,p,t)$ is a gauge term. In component notation this equation is $$S^\alpha = \epsilon^{\alpha \beta \gamma}(\partial_\beta(\theta_\gamma + \partial_\gamma f)).$$ We know that $\theta$  will not be unique because we can choose what gauge we work in.\footnote{Remember the curl of the gradient of a scalar field is always zero so our choice of $f$ has no effect on $S$. That is to say $S$ is gauge invariant.} We will write theta as $\theta = (\theta_q, \theta_p, \theta_t)$ and choose our gauge such that $\theta_p = 0$ by setting $\frac{\partial f}{\partial p} = -\theta_p$. This means we can write $$\theta = (\theta_q, 0, \theta_t)$$ without loss of generality. Plugging this back into $\mathbf{\nabla} \times \theta = S = (\frac{dq}{dt},\frac{dp}{dt}, \frac{dt}{dt} )$ and looking at the third component we get $$\frac{dt}{dt} = \frac{d \theta_q}{dp}.$$ Here we see that $\frac{dt}{dt} = 1 = \frac{d \theta_q}{dp}$.\footnote{Note here that the $t$ in the numerator of this differential is technically different from the $t$ in the denominator. In the numerator $t$ is an affine parameter while in the denominator it is a state variable.} Integrating with respect to $p$ gives us $$\theta_q = p + g(q,t)$$ where $g$ is an arbitrary function and thus can be set to zero. We have arrived then at $\theta = (p,0,\theta_t)$. Let $\theta_t = -H$. Plugging back in again to the cross product equation we arrive at a familiar system of equations $$S^q = d_t q = \partial _{p} H$$ $$S^p = d_t p = -\partial _q H$$ $$S^t = d_t t = 1.$$ This is the standard form of Hamilton's equations for a single degree of freedom where $H$ is the Hamiltonian.
+	Thinking about our damped oscillator example, we see that the vector field $S$ will have a nonzero divergence because the states of the classical particles get closer together as the system evolves towards its rest state as illustrated in Figure 5. Applying the requirement that $\rho(\xi^\alpha(t))$ be conserved in time, we see that the divergence of this vector field is must be zero $$\mathbf{\nabla} \cdot S = \partial_\alpha S^\alpha = \frac{\partial S^q}{\partial q} + \frac{\partial S^p}{\partial p} + \frac{\partial S^t}{\partial t} = 0.$$ Note that this means that we can write our vector field $S$ as the curl of a vector potential by the fundamental theorem: $$S = \mathbf{\nabla} \times (-\theta + \mathbf{\nabla} f)$$ where $\theta$ is our vector potential and $\nabla f(q,p,t)$ is a gauge term. In component notation this equation is $$S^\alpha = \epsilon^{\alpha \beta \gamma}(\partial_\beta(\theta_\gamma + \partial_\gamma f)).$$ We know that $\theta$  will not be unique because we can choose what gauge we work in.\footnote{Remember the curl of the gradient of a scalar field is always zero so our choice of $f$ has no effect on $S$. That is to say $S$ is gauge invariant.} We will write theta as $\theta = (\theta_q, \theta_p, \theta_t)$ and choose our gauge such that $\theta_p = 0$ by setting $\frac{\partial f}{\partial p} = -\theta_p$. This means we can write $$\theta = (\theta_q, 0, \theta_t)$$ without loss of generality. Plugging this back into $\mathbf{\nabla} \times \theta = S = (\frac{dq}{dt},\frac{dp}{dt}, \frac{dt}{dt} )$ and looking at the third component we get $$\frac{dt}{dt} = \frac{d \theta_q}{dp}.$$ Here we see that $\frac{dt}{dt} = 1 = \frac{d \theta_q}{dp}$.\footnote{Note here that the $t$ in the numerator of this differential is technically different from the $t$ in the denominator. In the numerator $t$ is an affine parameter while in the denominator it is a state variable.} Integrating with respect to $p$ gives us $$\theta_q = p + g(q,t)$$ where $g$ is an arbitrary function and thus can be set to zero. We have arrived then at $\theta = (p,0,\theta_t)$. Let $\theta_t = -H$. Plugging back in again to the cross product equation we arrive at a familiar system of equations $$S^q = d_t q = \partial _{p} H$$ $$S^p = d_t p = -\partial _q H$$ $$S^t = d_t t = 1.$$ This is the standard form of Hamilton's equations for a single degree of freedom where $H$ is the Hamiltonian.
 	
 	Generalizing this to a system with n degrees of freedom we recall that each infinitesimal surface in phase space is mapped to a surface of the same area; this means that the number possible states remains the same and that independent degrees of freedom remain independent and thus their surfaces remain orthogonal. We can break down a higher dimensional system into its d.o.f.s in order to arrive at our final equations: $$d_tq^i = \partial_{p_i}H$$ $$d_tp_i = -\partial_{q^i}H.$$ This is the generalized form of Hamilton's equations.\footnote{For a much more in depth treatment of this generalization see \cite{Carcassi_2018}.} A system that evolves according to these equations is a Hamiltonian system.
 
