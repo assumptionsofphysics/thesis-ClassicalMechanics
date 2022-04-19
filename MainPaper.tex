@@ -14,12 +14,25 @@
 
 
 
-\title{From Two Assumptions to Hamilton's Mechanics}
-\author{Ryan Cosper}
+
+%\title{From Two Assumptions to Hamilton's Mechanics}
+%\author{Ryan Cosper}
 	
 \begin{document}
 
-%\maketitle
+
+\tableofcontents
+\newpage
+
+\begin{abstract}
+
+	This work is a re-derivation of Hamiltonian Mechanics from two assumptions about a classical system. Through this derivation we work to better understand the nature of classical systems and eliminate some of the misconceptions surrounding the relationship between classical theories.
+
+\end{abstract}
+
+\section{Acknowledgments}
+
+	I would like to thank Gabriele Carcassi for his guidance and seemingly endless patience and Christine Aidala for her support and encouragement. This work is a part of the larger Assumptions of Physics project at the University of Michigan. This work was funded in part by the University of Michigan Department of Physics.
 
 \section{Introduction}
 
@@ -525,6 +538,10 @@ We have now successfully described the structure of phase space by making one as
    \begin{axis}[view={140}{30},
                 axis lines=center,
                 xlabel=$q$,ylabel=$t$,zlabel=$p$,
+                xmin = -1,
+                xmax = 1,
+                zmin = -1,
+                zmax = 1,
                 no marks,
                 xticklabels={,,},yticklabels={,,}]
      \addplot3+[line width=.5pt,no markers,samples=70,color=blue,  samples y=0,domain=0:5*pi,variable=\t]
@@ -543,9 +560,14 @@ We have now successfully described the structure of phase space by making one as
                                       ({-.5*exp(-.5*\t)*sin(\t r)},.5*\t,{.5*exp(-.5*\t)*cos(\t r)});
 \addplot3+[line width=.5pt,no markers,samples=70,color=teal, samples y=0,domain=0:5*pi,variable=\t]
                                       ({.5*exp(-.5*\t)*sin(\t r)},.5*\t,-{.5*exp(-.5*\t)*cos(\t r)});
+                                      
+\node [rotate=0] at (axis cs:  0,6,.28) {\Large $t_c$};
+\draw[line width=1pt] (0,6,.1) -- (0,6,-.1);
+
+
   \end{axis}
 \end{tikzpicture}
-\caption{The evolution of a damped harmonic oscillator in phase space. Evidently this vector field is not divergenceless. At some point }
+\caption{The evolution of a damped harmonic oscillator in phase space. Evidently this vector field is not divergenceless. At some critical time $t_c$ we can no longer distinguish this system from the oscillator at rest given finite precision of measurement.}
 \end{figure}
 
 \begin{defn}
@@ -650,12 +672,12 @@ Time evolution of entropy. It is conserved only under Hamiltonian evolution. If 
 	
 	We have now successfully derived all of Hamiltonian Mechanics from two basic assumptions about a system. By assuming that our system is Infinitesimally Reducible we derived the structure of phase space. With the assumption that the system undergoes Deterministic and Reversible Evolution we found a set of equations that describe the dynamics of the system. This result 
 	
-\section{Acknowledgments}
 
-	I would like to thank Gabriele Carcassi for his guidance and seemingly endless patience; Christine Aidala for her 
 
 
 \bibliographystyle{plain}
+\stepcounter{section} % Increase counter (section) by one step
+\addcontentsline{toc}{section}{\thesection \quad References} % Add to ToC (at the section level)
 \bibliography{Bibliography}
 
 
